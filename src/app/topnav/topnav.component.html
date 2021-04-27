@@ -17,6 +17,9 @@
                 <li class="nav-item px-lg-4" [ngClass]="{'active' : isCurrentRoute('/home')}">
                     <a class="nav-link text-uppercase text-expanded" (click)="navigate('/home')">Accueil</a>
                 </li>
+                <li class="nav-item px-lg-4" [ngClass]="{'active' : isCurrentRoute('/news')}">
+                    <a class="nav-link text-uppercase text-expanded" (click)="navigate('/news')">Actualités</a>
+                </li>
                 <li class="nav-item px-lg-4" [ngClass]="{'active' : isCurrentRoute('/skatepark')}">
                     <a class="nav-link text-uppercase text-expanded" (click)="navigate('/skatepark')">Le skatepark</a>
                 </li>
@@ -24,12 +27,12 @@
                     <a class="nav-link text-uppercase text-expanded"
                         (click)="navigate('/association')">L'association</a>
                 </li>
-                <li class="nav-item px-lg-4" [ngClass]="{'active' : isCurrentRoute('/partenaire')}">
+               <!-- <li class="nav-item px-lg-4" [ngClass]="{'active' : isCurrentRoute('/partenaire')}">
                     <a class="nav-link text-uppercase text-expanded" (click)="navigate('/partenaire')">Les
                         partenaires</a>
-                </li>
+                </li>-->
                 <li class="nav-item px-lg-4" [ngClass]="{'active' : isCurrentRoute('/shop')}">
-                    <a class="shop-item nav-link text-uppercase text-expanded" (click)="navigate('/shop')">Le shop</a>
+                    <a class="nav-link text-uppercase text-expanded" (click)="navigate('/shop')">Le shop</a>
                 </li>
                 <li class="nav-item px-lg-4" [ngClass]="{'active' : isCurrentRoute('/contact')}">
                     <a class="nav-link text-uppercase text-expanded" (click)="navigate('/contact')">Contact</a>

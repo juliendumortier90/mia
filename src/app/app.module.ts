@@ -11,6 +11,7 @@ import { ShopComponent } from './shop/shop.component';
 import { ContactComponent } from './contact/contact.component';
 import { AssociationComponent } from './association/association.component';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { NgxScrollTopModule } from 'ngx-scrolltop';
     SkateparkComponent,
     ShopComponent,
     ContactComponent,
+    NewsComponent,
     AssociationComponent
   ],
   imports: [
