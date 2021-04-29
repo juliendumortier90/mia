@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AssociationComponent } from './association/association.component';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { NewsComponent } from './news/news.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { NewsComponent } from './news/news.component';
   imports: [
     CommonModule,
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     NgxScrollTopModule
   ],
