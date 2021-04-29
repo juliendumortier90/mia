@@ -42,6 +42,10 @@
   height: 300px;
   position: relative;
 }
+.instavidd {
+  width: 100%;
+  height: 100%;
+}
 
 .username  {
   font-weight: 600;

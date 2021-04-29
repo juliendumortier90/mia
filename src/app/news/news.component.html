@@ -6,7 +6,12 @@
           <div class="insta-grid">
             <div class="user-name"><img class="ico" src="assets/img/logo-insta.png" alt="Made In Apremont">madeinapremont</div>
             <div class="picture" *ngIf="item.media_type === 'IMAGE' || item.media_type === 'CAROUSEL_ALBUM'"><img class="instapic" [src]="item.media_url"></div>
-            <div class="video" *ngIf="item.media_type === 'VIDEO'"><embed [src]="item.media_url" autostart="false" class="instavid" /></div>
+            <div class="video" *ngIf="item.media_type === 'VIDEO'">
+              <video class="instavidd" controls>
+                <source [src]="item.media_url" type="video/mp4">
+                Your browser does not support the video tag.
+              </video> 
+            </div>
             <div class="content">{{item.caption}}</div>
             <div class="date">{{item.timestamp | date:'dd/MM/yyyy'}}</div>
           </div>
