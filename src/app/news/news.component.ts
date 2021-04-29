@@ -19,7 +19,7 @@ export class NewsComponent implements OnInit {
   ngOnInit() {
     this.getLastFeeds().subscribe((data: any[]) => {
       this.lastFeeds = data.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
-      for (let i=0; this.lastFeeds.length; i++) {
+      for (let i=0; i<this.lastFeeds.length; i++) {
         if (this.lastFeeds[i].media_type === 'VIDEO') {
           this.lastFeeds[i].media_url = this.sanitizer.bypassSecurityTrustResourceUrl(this.lastFeeds[i].media_url)
         }
