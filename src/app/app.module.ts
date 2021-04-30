@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -18,6 +19,10 @@ import { AdminHomeComponent } from './admin/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminArticlesComponent } from './admin/articles/articles.component';
 import { ToastrModule } from 'ngx-toastr';
+import { AdminArticleComponent } from './admin/articles/article/article.component';
+import { FormsModule } from '@angular/forms';
+import { ConfirmationDialogComponent } from './util/popup/confirmation-dialog.component';
+import { ConfirmationDialogService } from './util/popup/confirmation-dialog.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +36,9 @@ import { ToastrModule } from 'ngx-toastr';
     AssociationComponent,
     AdminLoginComponent,
     AdminHomeComponent,
-    AdminArticlesComponent
+    AdminArticlesComponent,
+    AdminArticleComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     CommonModule,
@@ -39,10 +46,13 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     AppRoutingModule,
     NgxScrollTopModule,
+    FormsModule,
     FontAwesomeModule,
+    BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ ConfirmationDialogService ],
+  bootstrap: [AppComponent],
+  entryComponents: [ ConfirmationDialogComponent ]
 })
 export class AppModule { }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-articles',
@@ -12,7 +13,9 @@ export class AdminArticlesComponent implements OnInit {
 
   articles = []
 
-  constructor(private http: HttpClient, private toastr: ToastrService) {
+  constructor(private http: HttpClient,
+    private router: Router,
+    private toastr: ToastrService) {
   }
 
   ngOnInit() {
@@ -29,19 +32,7 @@ export class AdminArticlesComponent implements OnInit {
     return this.http.get<any>('https://sb59re9hg9.execute-api.eu-west-1.amazonaws.com/integ/shop/list-items')
   }
 
-  private addArticle(article) {
-    this.http.post('https://sb59re9hg9.execute-api.eu-west-1.amazonaws.com/integ/shop/add-item', article)
-        .subscribe((data: any) => {
-          this.toastr.success('Article ajouté')
-          this.updateArticles()
-        })
-  }
-
-  private deleteArticle(article) {
-    this.http.post('https://sb59re9hg9.execute-api.eu-west-1.amazonaws.com/integ/shop/delete-item', { id: article.id})
-        .subscribe((data: any) => {
-          this.toastr.success('Article supprimé')
-          this.updateArticles()
-        })
+  updateArticle(article) {
+    this.router.navigateByUrl('/admin/article', { state: {article: article}})
   }
 }

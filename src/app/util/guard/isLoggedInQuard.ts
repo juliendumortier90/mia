@@ -12,11 +12,9 @@ export class IsLoggedInGuard implements CanActivate {
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         if (!StorageService.isLoggedIn()) {
-            console.log('KO')
             this.router.navigateByUrl('/');
             return false
         }
-        console.log('OK')
         return true
     }
 

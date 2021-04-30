@@ -1,0 +1,70 @@
+.cta {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgba(230, 167, 86, 0.9);
+}
+
+.subtitle {
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.btn-marged {
+  margin-right: 15px;
+}
+
+.artpic {
+  padding: 20px;
+  max-width: 338px;
+  max-height: 338px;
+  width: 100%;
+}
+
+.button-edit {
+  text-align: left;
+}
+
+.article-picture {
+  border: 1px solid #b9b9b9;
+  border-radius: 4px;
+  background: #fff;
+  height: 100%;
+}
+
+.action-title {
+  font-family: system-ui;
+  font-size: 22px;
+}
+
+.pic-minheight {
+  min-height: 200px;
+}
+
+.add-pic {
+  line-height: 200px;
+  cursor: pointer;
+}
+
+.remove-pic {
+  cursor: pointer;
+  background: #444;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 7px;
+  border: 1px solid #888;
+  position: absolute;
+  top: 5%;
+  left: 9%;
+}
+
+.remove-pic:hover {
+  background: #666;
+  transition: all 0.3s ease-out 0s;
+}
+
+.input-pic {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
