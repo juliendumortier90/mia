@@ -13,6 +13,9 @@ import { AssociationComponent } from './association/association.component';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { NewsComponent } from './news/news.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminLoginComponent } from './admin/login/login.component';
+import { AdminHomeComponent } from './admin/home/home.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -23,14 +26,17 @@ import { HttpClientModule } from '@angular/common/http';
     ShopComponent,
     ContactComponent,
     NewsComponent,
-    AssociationComponent
+    AssociationComponent,
+    AdminLoginComponent,
+    AdminHomeComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    NgxScrollTopModule
+    NgxScrollTopModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

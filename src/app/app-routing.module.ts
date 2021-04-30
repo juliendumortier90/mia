@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminHomeComponent } from './admin/home/home.component';
+import { AdminLoginComponent } from './admin/login/login.component';
 import { AssociationComponent } from './association/association.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
@@ -7,6 +9,7 @@ import { NewsComponent } from './news/news.component';
 import { PartenaireComponent } from './partenaire/partenaire.component';
 import { ShopComponent } from './shop/shop.component';
 import { SkateparkComponent } from './skatepark/skatepark.component';
+import { IsLoggedInGuard } from './util/guard/isLoggedInQuard';
 
 const routes: Routes = [
     {
@@ -41,6 +44,17 @@ const routes: Routes = [
     {
         path: 'contact',
         component: ContactComponent
+    },
+    {
+        path: 'admin/login',
+        component: AdminLoginComponent
+    },
+    {
+        path: 'admin/home',
+        component: AdminHomeComponent,
+        canActivate: [
+            IsLoggedInGuard
+        ]
     }
 ];
 

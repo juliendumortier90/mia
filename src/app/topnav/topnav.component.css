@@ -1,0 +1,21 @@
+.admin {
+  color: #e44 !important;
+}
+
+.logout-button {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  color: #fff;
+  background: #212121;
+  padding: 9px;
+  border-radius: 4px;
+  border: 1px solid #484848;
+  font-size: 15px;
+}
+
+.logout-button:hover {
+  cursor: pointer;
+  background: #404040;
+  transition: all 0.3s ease-out 0s;
+}

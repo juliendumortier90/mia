@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { StorageService } from '../util/storage/storageService';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'topnav',
@@ -7,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./topnav.component.css']
 })
 export class TopNavComponent implements OnInit {
-
+  faSignOutAlt = faSignOutAlt;
   private readonly isBrowser: boolean = typeof window !== 'undefined';
 
   constructor(private router: Router) { }
@@ -17,6 +19,15 @@ export class TopNavComponent implements OnInit {
 
   isCurrentRoute(route: string) {
     return this.router.url.startsWith(route);
+  }
+
+  isLoggedIn() {
+    return StorageService.isLoggedIn()
+  }
+
+  logout() {
+    StorageService.setToken("")
+    this.navigate("/")
   }
 
   navigate(goto: string) {

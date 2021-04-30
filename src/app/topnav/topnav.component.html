@@ -14,6 +14,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
+                <li *ngIf="isLoggedIn()" class="nav-item px-lg-4" [ngClass]="{'active' : isCurrentRoute('/admin/home')}">
+                    <a class="admin nav-link text-uppercase text-expanded" (click)="navigate('/admin/home')">Administration</a>
+                </li>
                 <li class="nav-item px-lg-4" [ngClass]="{'active' : isCurrentRoute('/home')}">
                     <a class="nav-link text-uppercase text-expanded" (click)="navigate('/home')">Accueil</a>
                 </li>
@@ -27,10 +30,6 @@
                     <a class="nav-link text-uppercase text-expanded"
                         (click)="navigate('/association')">L'association</a>
                 </li>
-               <!-- <li class="nav-item px-lg-4" [ngClass]="{'active' : isCurrentRoute('/partenaire')}">
-                    <a class="nav-link text-uppercase text-expanded" (click)="navigate('/partenaire')">Les
-                        partenaires</a>
-                </li>-->
                 <li class="nav-item px-lg-4" [ngClass]="{'active' : isCurrentRoute('/shop')}">
                     <a class="nav-link text-uppercase text-expanded" (click)="navigate('/shop')">Le shop</a>
                 </li>
@@ -41,3 +40,6 @@
         </div>
     </div>
 </nav>
+<div class="logout-button" *ngIf="isLoggedIn()" >
+    <fa-icon [icon]="faSignOutAlt" (click)="logout()"></fa-icon>
+</div>
