@@ -1,5 +1,40 @@
-<section class="page-section about-heading">
-  <div class="container">
-    toto articles
+<div class="container shop-container container-shop-title">
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let item of articles">
+      <div class="product-grid">
+        <div class="product-image">
+          <div [id]="'carouselExampleControls'+item.id" class="carousel slide" data-ride="carousel"
+            data-interval="60000">
+            <div class="carousel-inner rounded">
+              <div class="carousel-item active">
+                <img [src]="item.pictures[0]">
+              </div>
+              <div class="carousel-item">
+                <img [src]="item.pictures[1]" *ngIf="item.pictures[1] != null">
+              </div>
+              <a *ngIf="item.pictures.length>1" class="carousel-control carousel-control-prev" [href]="'#carouselExampleControls'+item.id"
+                role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a *ngIf="item.pictures.length>1" class="carousel-control-next" [href]="'#carouselExampleControls'+item.id" role="button"
+                data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <ul class="social">
+            <li>
+              <div class="iwantyou" (click)="updateArticle(item)">"Détails"</div>
+            </li>
+          </ul>
+        </div>
+        <div class="product-content">
+          <h3 class="title"><span>{{ item.name }}</span></h3>
+          <div class="price"><span>{{ item.price | number:'1.2'}} € | <span *ngIf="item.stock > 0" [ngClass]="{'red': item.stock == 1, 'orang' : item.stock < 4 && item.stock > 1 , 'green' : item.stock > 3  }">{{ item.stock }} en stock</span><span class="red" *ngIf="item.stock == 0">sur commande</span></span></div>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
+</div>

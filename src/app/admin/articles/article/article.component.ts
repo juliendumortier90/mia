@@ -65,7 +65,7 @@ export class AdminArticleComponent implements OnInit {
       type: 'TSHIRT',
       name: '',
       price: 0,
-      stock: '',
+      stock: 0,
       pictures: [],
       paypalRef: '' 
     }
@@ -80,8 +80,9 @@ export class AdminArticleComponent implements OnInit {
       this.toastr.error("prix trop petit")
       return false
     }
-    if (!article.stock || article.stock < 0 || article.stock > 50) {
-      this.toastr.error("vérifier le stock")
+    if (article.stock == null || article.stock <0 || article.stock > 50) {
+      console.log(JSON.stringify(article))
+      this.toastr.error("verifier le stock")
       return false
     }
     if (!article.pictures || article.pictures.length < 1) {

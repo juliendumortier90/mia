@@ -8,8 +8,8 @@
             <div class="col-xl-12">
               <div class="cta-inner text-center rounded" *ngIf="article && !editMode && !isNew">
                   <div class="button-edit">
-                    <a class="btn btn-primary btn-sm btn-md" (click)="editMode=!editMode">Modifier</a>
-                    <a class="btn btn-primary btn-sm btn-md" (click)="deleteArticle()">Supprimer</a>
+                    <a class="btn btn-primary btn-sm btn-md btn-marged" (click)="editMode=!editMode">Modifier</a>
+                    <a class="btn btn-primary btn-sm btn-md btn-marged" (click)="deleteArticle()">Supprimer</a>
                     <a class="btn btn-primary btn-sm" (click)="goBack()" *ngIf="!isNew">Annuler</a>
                   </div>
                   <div class="article-name"><span class="subtitle">Titre:</span> {{ article.name }}</div>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="article-stock">
                   <label for="article-stock">Nombre en stock
-                    <input type="number" class="form-control" id="article-stock" placeholder="12" [(ngModel)]="article.stock">
+                    <input type="number" class="form-control" id="article-stock" placeholder="12" [(ngModel)]="article.stock" min="0">
                   </label>
                 </div>
                 <div class="article-paypalRef">

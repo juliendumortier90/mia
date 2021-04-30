@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { SHOP_ITEMS } from './shopItems.mock';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-shop',
@@ -8,23 +9,21 @@ import { SHOP_ITEMS } from './shopItems.mock';
 })
 export class ShopComponent implements OnInit {
 
-  items = SHOP_ITEMS;
+  items = [];
+
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
-
+    this.updateArticles()
   }
-}
 
-export interface ShopItem {
-  id: string,
-  b64picture1: string,
-  b64picture2: string,
-  b64picture3: string,
-  b64picture4: string,
-  title: string,
-  price: number,
-  type: string,
-  uniq: boolean,
-  occasion: boolean,
-  customisable: boolean
+  private updateArticles() {
+    this.getArticles().subscribe((data: any[]) => {
+      this.items = data
+    })
+  }
+
+  private getArticles(): Observable<any[]> {
+    return this.http.get<any>('https://sb59re9hg9.execute-api.eu-west-1.amazonaws.com/integ/shop/list-items')
+  }
 }
