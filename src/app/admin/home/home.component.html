@@ -1,6 +1,60 @@
 <section class="page-section about-heading">
-  <div class="container">
-    salut, ici la home
-    <a class="btn btn-primary btn-xl" (click)="logout()">Se déconnecter</a>
+  <div class="container-top">
+    <div class="row">
+      <div class="col-md-4 mx-auto">
+        <section class="page-section cta">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-9 mx-auto">
+              <div class="cta-inner text-center rounded">
+                <h2 class="section-heading mb-4">
+                  <span class="section-heading-upper">Adhésions</span>
+                </h2>
+                <p class="mb-0">Ce menu permet de visualiser et gérer les adhérents à l'association.</p>
+                <br />
+                <a class="btn btn-primary btn-xl" (click)="navigate('/admin/members')">Voir les adhésions</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+      </div>
+      <div class="col-md-4 mx-auto">
+        <section class="page-section cta">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-9 mx-auto">
+              <div class="cta-inner text-center rounded">
+                <h2 class="section-heading mb-4">
+                  <span class="section-heading-upper">Shop</span>
+                </h2>
+                <p class="mb-0">Ce menu permet de d'acceder à la gestion des articles en vente. Attention à ne pas faire de bêtises !</p>
+                <br />
+                <a class="btn btn-primary btn-xl" (click)="navigate('/admin/articles')">Voir les articles</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+      </div>
+      <div class="col-md-4 mx-auto">
+        <section class="page-section cta">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-9 mx-auto">
+              <div class="cta-inner text-center rounded">
+                <h2 class="section-heading mb-4">
+                  <span class="section-heading-upper">Commandes</span>
+                </h2>
+                <p class="mb-0">Ce menu permet de visualiser les commandes et les rapports de comptabilité.</p>
+                <br />
+                <a class="btn btn-primary btn-xl" (click)="navigate('/admin/orders')">Voir les commandes</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+      </div>
+    </div>
   </div>
 </section>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { StorageService } from 'src/app/util/storage/storageService';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,15 +10,17 @@ import { StorageService } from 'src/app/util/storage/storageService';
 })
 export class AdminHomeComponent implements OnInit {
 
-  constructor(private http: HttpClient) {
+  private readonly isBrowser: boolean = typeof window !== 'undefined';
 
+  constructor(private router: Router) {}
+  
+  ngOnInit() { 
   }
 
-  ngOnInit() {
-    
-  }
-
-  logout() {
-    StorageService.setToken("")
+  navigate(goto: string) {
+    if (this.isBrowser) {
+      window.scroll({ top: 0, left: 0, behavior: 'auto' });
+    }
+    this.router.navigateByUrl(goto);
   }
 }

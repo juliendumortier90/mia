@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminArticlesComponent } from './admin/articles/articles.component';
 import { AdminHomeComponent } from './admin/home/home.component';
 import { AdminLoginComponent } from './admin/login/login.component';
 import { AssociationComponent } from './association/association.component';
@@ -52,6 +53,13 @@ const routes: Routes = [
     {
         path: 'admin/home',
         component: AdminHomeComponent,
+        canActivate: [
+            IsLoggedInGuard
+        ]
+    },
+    {
+        path: 'admin/articles',
+        component: AdminArticlesComponent,
         canActivate: [
             IsLoggedInGuard
         ]

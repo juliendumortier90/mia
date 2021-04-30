@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminLoginComponent } from './admin/login/login.component';
 import { AdminHomeComponent } from './admin/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AdminArticlesComponent } from './admin/articles/articles.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NewsComponent,
     AssociationComponent,
     AdminLoginComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    AdminArticlesComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +39,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HttpClientModule,
     AppRoutingModule,
     NgxScrollTopModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
