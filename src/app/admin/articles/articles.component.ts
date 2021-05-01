@@ -35,4 +35,8 @@ export class AdminArticlesComponent implements OnInit {
   updateArticle(article) {
     this.router.navigateByUrl('/admin/article', { state: {article: article}})
   }
+
+  addArticle() {
+    this.router.navigateByUrl('/admin/article')
+  }
 }
