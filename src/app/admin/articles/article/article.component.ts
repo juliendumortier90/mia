@@ -46,13 +46,21 @@ export class AdminArticleComponent implements OnInit {
   saveArticle() {
     if (this.isValidArticle(this.article)) {
       this.confirmationDialogService.confirm('Enregistrer', 'Voulez-vous vraiment enregistrer ?')
-        .then((confirmed) => this.callUpdateArticle(this.article))
+        .then((confirmed) => {
+          if(confirmed) {
+            this.callUpdateArticle(this.article)
+          }
+        })
     }
   }
 
   deleteArticle() {
     this.confirmationDialogService.confirm('Supprimer', "Voulez-vous vraiment supprimer l'article ?")
-      .then((confirmed) => this.callDeleteArticle(this.article))
+      .then((confirmed) => {
+        if(confirmed) {
+          this.callDeleteArticle(this.article)
+        }
+      })
   }
   
   goBack() {

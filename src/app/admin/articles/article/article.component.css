@@ -9,6 +9,10 @@
   font-weight: 600;
 }
 
+.btn {
+  font-family: "Raleway";
+}
+
 .btn-marged {
   margin-right: 15px;
 }
@@ -32,8 +36,9 @@
 }
 
 .action-title {
-  font-family: system-ui;
-  font-size: 22px;
+  font-size: 1rem;
+  font-weight: 800;
+  font-family: "Raleway";
 }
 
 .pic-minheight {
@@ -66,5 +71,14 @@
 
 .input-pic {
   margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.img-title {
   margin-bottom: 10px;
+}
+
+.label-item {
+  width: 50%;
+  min-width: 300px;
 }

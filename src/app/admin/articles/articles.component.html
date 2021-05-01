@@ -1,4 +1,5 @@
 <div class="container shop-container container-shop-title">
+  <a class="btn-add btn btn-primary btn-sm btn-marged" (click)="updateArticle()">Ajouter un article</a>
   <div class="row">
     <div class="col-sm-4" *ngFor="let item of articles">
       <div class="product-grid">
@@ -7,7 +8,7 @@
             data-interval="60000">
             <div class="carousel-inner rounded">
               <div class="carousel-item active">
-                <img [src]="item.pictures[0]">
+                <img [src]="item.pictures[0]"> <!-- au moins 1 image obligatoire -->
               </div>
               <div class="carousel-item">
                 <img [src]="item.pictures[1]" *ngIf="item.pictures[1] != null">

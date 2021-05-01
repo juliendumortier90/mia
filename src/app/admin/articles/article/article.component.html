@@ -39,14 +39,14 @@
                 </div>
                 
                 <div class="article-name">
-                  <label for="article-name">Titre de l'article
-                    <input type="text" class="form-control" id="article-name" placeholder="Tee shirt xxx taille M" [(ngModel)]="article.name">
+                  <label class="label-item" for="article-name">Titre de l'article
+                    <input type="text" class="form-control" id="article-name" placeholder="ex: Tee shirt xxx taille M" [(ngModel)]="article.name">
                   </label>
                 </div>
                 <div class="article-type">
-                  <label for="article-type">Type
+                  <label class="label-item" for="article-type">Type
                     <select class="form-control" id="article-type" [(ngModel)]="article.type">
-                      <option>TSHIRT</option>
+                      <option selected>TSHIRT</option>
                       <option>VESTE</option>
                       <option>CASQUETTE</option>
                       <option>PORTECLE</option>
@@ -54,20 +54,21 @@
                   </label>
                 </div>
                 <div class="article-price">
-                  <label for="article-price">Prix en euros TTC
-                    <input type="number" class="form-control" id="article-price" placeholder="20.5" [(ngModel)]="article.price">
+                  <label class="label-item" for="article-price">Prix en euros TTC
+                    <input type="number" class="form-control" id="article-price" [(ngModel)]="article.price">
                   </label>
                 </div>
                 <div class="article-stock">
-                  <label for="article-stock">Nombre en stock
-                    <input type="number" class="form-control" id="article-stock" placeholder="12" [(ngModel)]="article.stock" min="0">
+                  <label class="label-item" for="article-stock">Nombre en stock
+                    <input type="number" class="form-control" id="article-stock" [(ngModel)]="article.stock" min="0">
                   </label>
                 </div>
                 <div class="article-paypalRef">
-                  <label for="article-stock">Libellé Paypal
-                    <input type="number" class="form-control" id="article-stock" placeholder="PAYPAL_REF" [(ngModel)]="article.paypalRef">
+                  <label class="label-item" for="article-stock">Libellé Paypal
+                    <input type="number" class="form-control" id="article-stock" placeholder="ex: PAYPAL_REF" [(ngModel)]="article.paypalRef">
                   </label>
-                </div>Images<br/>
+                </div>
+                <div class="img-title">Images (résolution optimale: 300/300px, taille maximal 200Ko)</div>
                 <input class="input-pic" type="file" (change)="addPic($event)" *ngIf="article.pictures.length < 2">
                 <div class="article-pictures row">
                   <div class="col-md-6 article-picture-container">

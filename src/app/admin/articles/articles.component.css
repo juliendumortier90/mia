@@ -256,3 +256,8 @@ h3.h3 {
 .green {
   color: rgb(0 185 39) !important;
 }
+
+.btn-add {
+  font-family: "Raleway";
+  margin-bottom: 20px;
+}
