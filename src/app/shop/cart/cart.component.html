@@ -1,0 +1,38 @@
+<section class="page-section cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-8 mx-auto">
+        <div class="cta-inner text-center rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-upper your-cart">Ton panier</span>
+          </h2>
+          <div class="cart-items">
+            <div class="empty" *ngIf="items.length == 0">Le panier est vide.</div>
+            <div class="cart-item row" *ngFor="let item of items">
+              <div class="col-sm-2">
+                <img class="cart-img" [src]="item.pictures[0]">
+              </div>
+              <div class="col-sm-7">
+                <div class="item-title">{{item.name}}</div>
+              </div>
+              <div class="col-sm-3">
+                <div class="price-item">{{item.price | number:'1.2-2'}} EUR</div>
+              </div>
+              <div class="delete-item"><span class="del" (click)="deleteFromCart(item)">supprimer</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4 mx-auto">
+        <div class="cta-inner rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-upper your-cart">Total <div class="right">{{ getTotalWithFdp() | number:'1.2-2'}} EUR</div></span>
+          </h2>
+          <div class="objs"><span class="objects">Objets ({{items.length}}) : </span><div class="right">{{ getTotal() | number:'1.2-2'}} EUR</div></div>
+          <div class="shipping">Livraison (France) : <div class="right">{{getFdp()}} EUR</div></div>
+          <div class="section-heading-upper" *ngIf="items.length > 0"><button class="finalize btn btn-primary btn-md">Finaliser l'achat</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

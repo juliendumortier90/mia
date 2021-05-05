@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
 import { PartenaireComponent } from './partenaire/partenaire.component';
+import { CartComponent } from './shop/cart/cart.component';
 import { ShopComponent } from './shop/shop.component';
 import { SkateparkComponent } from './skatepark/skatepark.component';
 import { IsLoggedInGuard } from './util/guard/isLoggedInQuard';
@@ -42,6 +43,10 @@ const routes: Routes = [
     {
         path: 'shop',
         component: ShopComponent
+    },
+    {
+        path: 'shop/cart',
+        component: CartComponent
     },
     {
         path: 'contact',

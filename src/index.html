@@ -20,9 +20,50 @@
 
   <!-- Custom styles for this template -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://www.paypal.com/sdk/js?currency=EUR&buyer-country=FR&locale=fr_FR&client-id=ARkJXyaiP9QAJpk2A235mcCBPPv5z2TzeGzX2C26oGgqsSPA-RuHxPU73cwyQolaDnOzZCUYompaIfmz"> // Replace YOUR_CLIENT_ID with your sandbox client ID
+  </script>
 </head>
 
-<body>
+<body><div id="paypal-button-container"></div>
+      
+  <!-- Add the checkout buttons, set up the order and approve the order -->
+  <script>
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+            intent: 'CAPTURE',
+            purchase_units: [
+                {
+                    amount: {
+                        value: '7',
+                        currency_code: 'EUR',
+                        breakdown: {
+                            item_total: {value: '7', currency_code: 'EUR'}
+                        }
+                    },
+                    invoice_id: 'muesli_invoice_id',
+                    items: [{
+                        name: 'Hafer',
+                        unit_amount: {value: '3', currency_code: 'EUR'},
+                        quantity: '1',
+                        sku: 'haf001'
+                    }, {
+                        name: 'Discount',
+                        unit_amount: {value: '4', currency_code: 'EUR'},
+                        quantity: '1',
+                        sku: 'dsc002'
+                    }]
+                }
+            ]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          alert(JSON.stringify(details));
+        });
+      }
+    }).render('#paypal-button-container'); // Display payment options on your web page
+  </script>
   <app-root></app-root>
 
   <footer class="footer text-faded text-center py-5">

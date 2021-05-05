@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { StorageService } from '../util/storage/storageService';
 
 @Component({
   selector: 'app-shop',
@@ -11,10 +13,15 @@ export class ShopComponent implements OnInit {
 
   items = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private router: Router, private http: HttpClient) {}
 
   ngOnInit() {
     this.updateArticles()
+  }
+
+  addToCart(article) {
+    StorageService.addCartItem(article)
+    this.router.navigateByUrl('/shop/cart')
   }
 
   private updateArticles() {

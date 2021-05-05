@@ -45,10 +45,10 @@
           </div>
           <ul class="social">
             <li>
-              <div class="iwantyou">"Je le veux !"</div>
+              <div class="iwantyou" (click)="addToCart(item)">"Ajouter au panier"</div>
             </li>
           </ul>
-          <span class="product-new-label">Bientôt en vente !</span>
+          <!-- <span class="product-new-label">Bientôt en vente !</span> -->
         </div>
         <div class="product-content">
           <h3 class="title"><span>{{ item.title }}</span></h3>

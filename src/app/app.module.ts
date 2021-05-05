@@ -23,6 +23,8 @@ import { AdminArticleComponent } from './admin/articles/article/article.componen
 import { FormsModule } from '@angular/forms';
 import { ConfirmationDialogComponent } from './util/popup/confirmation-dialog.component';
 import { ConfirmationDialogService } from './util/popup/confirmation-dialog.service';
+import { DataService } from './util/storage/dataService';
+import { CartComponent } from './shop/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { ConfirmationDialogService } from './util/popup/confirmation-dialog.serv
     AdminHomeComponent,
     AdminArticlesComponent,
     AdminArticleComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    CartComponent
   ],
   imports: [
     CommonModule,
@@ -51,7 +54,7 @@ import { ConfirmationDialogService } from './util/popup/confirmation-dialog.serv
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [ ConfirmationDialogService ],
+  providers: [ ConfirmationDialogService, DataService ],
   bootstrap: [AppComponent],
   entryComponents: [ ConfirmationDialogComponent ]
 })
