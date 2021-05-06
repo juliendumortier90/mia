@@ -30,7 +30,7 @@
           </h2>
           <div class="objs"><span class="objects">Objets ({{items.length}}) : </span><div class="right">{{ getTotal() | number:'1.2-2'}} EUR</div></div>
           <div class="shipping">Livraison (France) : <div class="right">{{getFdp()}} EUR</div></div>
-          <div class="section-heading-upper" *ngIf="items.length > 0"><button class="finalize btn btn-primary btn-md">Finaliser l'achat</button></div>
+          <div class="section-heading-upper" *ngIf="items.length > 0"><button class="finalize btn btn-primary btn-md" (click)="goFinalize()">Finaliser l'achat</button></div>
         </div>
       </div>
     </div>

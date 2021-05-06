@@ -25,6 +25,9 @@ import { ConfirmationDialogComponent } from './util/popup/confirmation-dialog.co
 import { ConfirmationDialogService } from './util/popup/confirmation-dialog.service';
 import { DataService } from './util/storage/dataService';
 import { CartComponent } from './shop/cart/cart.component';
+import { PaypalComponent } from './shop/paypal/paypal.component';
+import { NgxPayPalModule } from 'ngx-paypal';
+import { PaypalSuccessComponent } from './shop/success/success.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,9 @@ import { CartComponent } from './shop/cart/cart.component';
     AdminArticlesComponent,
     AdminArticleComponent,
     ConfirmationDialogComponent,
-    CartComponent
+    CartComponent,
+    PaypalComponent,
+    PaypalSuccessComponent
   ],
   imports: [
     CommonModule,
@@ -52,6 +57,7 @@ import { CartComponent } from './shop/cart/cart.component';
     FormsModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
+    NgxPayPalModule,
     ToastrModule.forRoot()
   ],
   providers: [ ConfirmationDialogService, DataService ],

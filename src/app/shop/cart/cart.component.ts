@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from 'src/app/util/storage/dataService';
 import { StorageService } from 'src/app/util/storage/storageService';
 
-const FDP = 6
+export const FDP = 6
 
 @Component({
   selector: 'app-cart',
@@ -14,12 +15,16 @@ export class CartComponent implements OnInit {
 
   items = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.items = StorageService.getCartItems()
   }
 
+  goFinalize() {
+    this.router.navigateByUrl('shop/paypal')
+  }
+  
   deleteFromCart(item) {
     const index = this.items.indexOf(item, 0);
     if (index > -1) {

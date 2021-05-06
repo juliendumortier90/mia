@@ -10,7 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
 import { PartenaireComponent } from './partenaire/partenaire.component';
 import { CartComponent } from './shop/cart/cart.component';
+import { PaypalComponent } from './shop/paypal/paypal.component';
 import { ShopComponent } from './shop/shop.component';
+import { PaypalSuccessComponent } from './shop/success/success.component';
 import { SkateparkComponent } from './skatepark/skatepark.component';
 import { IsLoggedInGuard } from './util/guard/isLoggedInQuard';
 
@@ -47,6 +49,14 @@ const routes: Routes = [
     {
         path: 'shop/cart',
         component: CartComponent
+    },
+    {
+        path: 'shop/paypal',
+        component: PaypalComponent
+    },
+    {
+        path: 'shop/success',
+        component: PaypalSuccessComponent
     },
     {
         path: 'contact',

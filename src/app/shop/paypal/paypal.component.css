@@ -1,0 +1,11 @@
+.right {
+  float: right;
+}
+
+.limit {
+  max-width: 800px;
+}
+
+.shipping {
+  margin-bottom: 30px;
+}
