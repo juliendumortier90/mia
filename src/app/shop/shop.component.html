@@ -51,8 +51,8 @@
           <!-- <span class="product-new-label">Bientôt en vente !</span> -->
         </div>
         <div class="product-content">
-          <h3 class="title"><span>{{ item.title }}</span></h3>
-          <div class="price">{{ item.price | number:'2.2'}} €</div>
+          <h3 class="title"><span>{{ item.name }}</span></h3>
+          <div class="price"><span>{{ item.price | number:'1.2'}} € | <span *ngIf="item.stock > 0" [ngClass]="{'red': item.stock == 1, 'orang' : item.stock < 4 && item.stock > 1 , 'green' : item.stock > 3  }">{{ item.stock }} en stock</span><span class="red" *ngIf="item.stock == 0">sur commande</span></span></div>
         </div>
       </div>
     </div>

@@ -186,7 +186,6 @@ h3.h3 {
   color: #999;
   font-size: 13px;
   font-weight: 400;
-  text-decoration: line-through;
   margin-left: 3px;
   display: inline-block;
 }
@@ -236,4 +235,16 @@ h3.h3 {
   min-width: 272px;
   min-height: 272px;
   background: rgb(255 255 255 / 90%);
+}
+
+.red {
+  color: #e33 !important;
+}
+
+.orang {
+  color: rgb(207, 122, 24) !important;
+}
+
+.green {
+  color: rgb(0 185 39) !important;
 }
