@@ -18,7 +18,7 @@ export class TopNavComponent implements OnInit {
   }
 
   isCurrentRoute(route: string) {
-    return this.router.url.startsWith(route);
+    return this.router.url === route;
   }
 
   isLoggedIn() {
@@ -28,6 +28,10 @@ export class TopNavComponent implements OnInit {
   logout() {
     StorageService.setToken("")
     this.navigate("/")
+  }
+
+  getNbItemInCart() {
+    return StorageService.getCartItems().length
   }
 
   navigate(goto: string) {

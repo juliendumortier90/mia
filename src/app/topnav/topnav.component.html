@@ -33,8 +33,8 @@
                 <li class="nav-item px-lg-4" [ngClass]="{'active' : isCurrentRoute('/shop')}">
                     <a class="nav-link text-uppercase text-expanded" (click)="navigate('/shop')">Le shop</a>
                 </li>
-                <li class="nav-item px-lg-4" [ngClass]="{'active' : isCurrentRoute('/contact')}">
-                    <a class="nav-link text-uppercase text-expanded" (click)="navigate('/contact')">Contact</a>
+                <li class="nav-item px-lg-4" [ngClass]="{'active' : isCurrentRoute('/shop/cart')}">
+                    <a class="nav-link text-uppercase text-expanded" (click)="navigate('/shop/cart')">Panier <span *ngIf='getNbItemInCart() > 0'>({{getNbItemInCart()}})</span></a>
                 </li>
             </ul>
         </div>

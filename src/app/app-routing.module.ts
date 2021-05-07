@@ -5,7 +5,6 @@ import { AdminArticlesComponent } from './admin/articles/articles.component';
 import { AdminHomeComponent } from './admin/home/home.component';
 import { AdminLoginComponent } from './admin/login/login.component';
 import { AssociationComponent } from './association/association.component';
-import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
 import { PartenaireComponent } from './partenaire/partenaire.component';
@@ -57,10 +56,6 @@ const routes: Routes = [
     {
         path: 'shop/success',
         component: PaypalSuccessComponent
-    },
-    {
-        path: 'contact',
-        component: ContactComponent
     },
     {
         path: 'admin/login',

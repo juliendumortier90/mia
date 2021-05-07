@@ -19,3 +19,7 @@
   background: #404040;
   transition: all 0.3s ease-out 0s;
 }
+
+.nav-item {
+  cursor: pointer;
+}
