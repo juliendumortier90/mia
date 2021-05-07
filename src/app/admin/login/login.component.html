@@ -1,6 +1,24 @@
-<section class="page-section about-heading">
+
+<section class="page-section cta">
   <div class="container">
-    login/password
-    <a class="btn btn-primary btn-xl" (click)="login('','')">Se connecter</a>
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+            <div class="login">
+              <label class="login-item" for="login-in">Identifiant
+                <input type="text" class="form-control" id="login-in" >
+              </label>
+            </div>
+
+            <div class="mdp">
+              <label class="password-item" for="password-in">Mot de passe
+                <input type="text" class="form-control" id="password-in" >
+              </label>
+            </div>
+
+            <a class="btn btn-primary btn-xl">Se connecter</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
