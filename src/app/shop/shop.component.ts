@@ -24,6 +24,11 @@ export class ShopComponent implements OnInit {
     this.router.navigateByUrl('/shop/cart')
   }
 
+  getNbItemInCart(item) {
+    const cartItems = StorageService.getCartItems()
+    return cartItems.filter(cartItem => cartItem.id == item.id).length
+  }
+
   private updateArticles() {
     this.getArticles().subscribe((data: any[]) => {
       this.items = data

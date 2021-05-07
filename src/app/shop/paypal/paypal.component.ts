@@ -93,7 +93,7 @@ export class PaypalComponent implements OnInit {
       const paypalItem = {
         name: item.name,
         quantity: '1',
-        description: item.type,
+        description: item.id,
         category: 'PHYSICAL_GOODS',
         unit_amount: {
           currency_code: 'EUR',
@@ -129,9 +129,9 @@ export class PaypalComponent implements OnInit {
   }
 
   private callOnCompleteTransaction(data: any) {
-    this.toastr.success("Paiement réussi")
     this.http.post('https://sb59re9hg9.execute-api.eu-west-1.amazonaws.com/integ/shop/oncomplete-transaction', data)
         .subscribe((data: any) => {
+          this.toastr.success("Paiement réussi")
           this.router.navigateByUrl('/shop/success')
         })
   }
