@@ -12,7 +12,7 @@ import { ShopComponent } from './shop/shop.component';
 import { AssociationComponent } from './association/association.component';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { NewsComponent } from './news/news.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AdminLoginComponent } from './admin/login/login.component';
 import { AdminHomeComponent } from './admin/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -27,6 +27,8 @@ import { CartComponent } from './shop/cart/cart.component';
 import { PaypalComponent } from './shop/paypal/paypal.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { PaypalSuccessComponent } from './shop/success/success.component';
+import { Router } from '@angular/router';
+import { AuthInterceptor } from './util/http.interceptor';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,14 @@ import { PaypalSuccessComponent } from './shop/success/success.component';
     NgxPayPalModule,
     ToastrModule.forRoot()
   ],
-  providers: [ ConfirmationDialogService, DataService ],
+  providers: [ {
+    provide: HTTP_INTERCEPTORS,
+    useFactory: function(router: Router) {
+      return new AuthInterceptor(router)
+    },
+    multi: true,
+    deps: [Router]
+ }, ConfirmationDialogService, DataService ],
   bootstrap: [AppComponent],
   entryComponents: [ ConfirmationDialogComponent ]
 })

@@ -1,3 +1,24 @@
 .mdp {
   margin-bottom: 20px;
 }
+
+.login-container {
+  font-family: "Raleway";
+}
+
+.login-error {
+  font-size: 0.9em;
+  font-weight: 700;
+  color: #da1919;
+  margin-bottom: 20px;
+}
+
+.disabled-btn {
+  background-color: #d6c1a6;
+  border-color: #d6c1a6;
+}
+
+.disabled-btn:hover {
+  background-color: #d6c1a6;
+  border-color: #d6c1a6;
+}
