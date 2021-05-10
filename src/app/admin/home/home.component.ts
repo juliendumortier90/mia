@@ -22,4 +22,8 @@ export class AdminHomeComponent implements OnInit {
     }
     this.router.navigateByUrl(goto);
   }
+
+  hasRole(role: string) {
+    return StorageService.userHasRole(role)
+  }
 }

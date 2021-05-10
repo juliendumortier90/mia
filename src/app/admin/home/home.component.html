@@ -1,7 +1,7 @@
 <section class="page-section about-heading">
   <div class="container-top">
     <div class="row">
-      <div class="col-md-4 mx-auto">
+      <div class="col-md-4 mx-auto" *ngIf="hasRole('/admin/members')">
         <section class="page-section cta">
         <div class="container">
           <div class="row">
@@ -19,7 +19,7 @@
         </div>
         </section>
       </div>
-      <div class="col-md-4 mx-auto">
+      <div class="col-md-4 mx-auto" *ngIf="hasRole('/admin/articles')">
         <section class="page-section cta">
         <div class="container">
           <div class="row">
@@ -37,7 +37,7 @@
         </div>
         </section>
       </div>
-      <div class="col-md-4 mx-auto">
+      <div class="col-md-4 mx-auto" *ngIf="hasRole('/admin/orders')">
         <section class="page-section cta">
         <div class="container">
           <div class="row">

@@ -1,9 +1,10 @@
-import { HttpInterceptor, HttpErrorResponse, HttpRequest, HttpHandler, HttpEvent } from "@angular/common/http";
+import { HttpInterceptor, HttpErrorResponse, HttpRequest, HttpHandler, HttpEvent, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { catchError } from 'rxjs/operators';
 import { of, throwError } from "rxjs";
 import { Observable } from "rxjs";
+import { StorageService } from "./storage/storageService";
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
@@ -23,7 +24,13 @@ export class AuthInterceptor implements HttpInterceptor {
     }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        console.log('intercepted');
-        return next.handle(req).pipe(catchError(err => this.handleError(err)));
+        let authReq = req
+        
+        if (StorageService.isLoggedIn()) {
+            authReq = req.clone({
+                headers: authReq.headers.append('x-api-key', StorageService.getToken())
+            });
+        }
+        return next.handle(authReq).pipe(catchError(err => this.handleError(err)));
     }
 }

@@ -1,4 +1,5 @@
 const TOKEN_KEY = 'TOKEN_KEY'
+const ROLES_KEY = 'ROLES_KEY'
 const CART_ITEMS_KEY = 'CART_ITEMS'
 
 export class StorageService {
@@ -14,6 +15,27 @@ export class StorageService {
 
     static setToken(token: string) {
         localStorage.setItem(TOKEN_KEY, token)
+    }
+
+    static setRoles(roles: string[]) {
+        localStorage.setItem(ROLES_KEY, JSON.stringify(roles))
+    }
+
+    static clearTokenAndRoles() {
+        localStorage.setItem(TOKEN_KEY, "")
+        localStorage.setItem(ROLES_KEY, '[]')
+    }
+
+    static getRoles(): any[] {
+        const rolesString = localStorage.getItem(ROLES_KEY)
+        if (rolesString == null || rolesString == 'undefined' || rolesString.length < 2) {
+            return []
+        }
+        return JSON.parse(rolesString)
+    }
+
+    static userHasRole(role: string) {
+        return this.getRoles().includes(role)
     }
 
     static addCartItem(cartItem: any) {
@@ -32,10 +54,10 @@ export class StorageService {
     }
 
     static getCartItems(): any[] {
-        let items = JSON.parse(localStorage.getItem(CART_ITEMS_KEY))
-        if (items == null) {
-            items = []
+        const itemsString = localStorage.getItem(CART_ITEMS_KEY)
+        if (itemsString == null || itemsString == 'undefined' || itemsString.length < 2) {
+           return []
         }
-        return items
+        return JSON.parse(itemsString)
     }
 }

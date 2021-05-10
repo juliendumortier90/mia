@@ -26,7 +26,7 @@ export class TopNavComponent implements OnInit {
   }
 
   logout() {
-    StorageService.setToken("")
+    StorageService.clearTokenAndRoles()
     this.navigate("/")
   }
 

@@ -15,6 +15,7 @@ import { PaypalComponent } from './shop/paypal/paypal.component';
 import { ShopComponent } from './shop/shop.component';
 import { PaypalSuccessComponent } from './shop/success/success.component';
 import { SkateparkComponent } from './skatepark/skatepark.component';
+import { HasRoleGuard } from './util/guard/hasRoleGuard';
 import { IsLoggedInGuard } from './util/guard/isLoggedInQuard';
 
 const routes: Routes = [
@@ -75,21 +76,21 @@ const routes: Routes = [
         path: 'admin/home',
         component: AdminHomeComponent,
         canActivate: [
-            IsLoggedInGuard
+            HasRoleGuard
         ]
     },
     {
         path: 'admin/articles',
         component: AdminArticlesComponent,
         canActivate: [
-            IsLoggedInGuard
+            HasRoleGuard
         ]
     },
     {
         path: 'admin/article',
         component: AdminArticleComponent,
         canActivate: [
-            IsLoggedInGuard
+            HasRoleGuard
         ]
     }
 ];
