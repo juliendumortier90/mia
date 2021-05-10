@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminAddUserComponent } from './admin/add-user/add-user.component';
 import { AdminArticleComponent } from './admin/articles/article/article.component';
 import { AdminArticlesComponent } from './admin/articles/articles.component';
 import { AdminHomeComponent } from './admin/home/home.component';
 import { AdminLoginComponent } from './admin/login/login.component';
+import { AdminToActivateComponent } from './admin/toactivate/toactivate.component';
 import { AssociationComponent } from './association/association.component';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
@@ -60,6 +62,14 @@ const routes: Routes = [
     {
         path: 'admin/login',
         component: AdminLoginComponent
+    },
+    {
+        path: 'admin/add-user',
+        component: AdminAddUserComponent
+    },
+    {
+        path: 'admin/toactivate',
+        component: AdminToActivateComponent
     },
     {
         path: 'admin/home',

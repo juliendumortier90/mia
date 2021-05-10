@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import {Md5} from 'ts-md5/dist/md5';
+import { Md5 } from 'ts-md5/dist/md5';
 import { StorageService } from 'src/app/util/storage/storageService';
 
 @Component({
@@ -28,13 +28,17 @@ export class AdminLoginComponent implements OnInit {
       login: this.login,
       password: md5
     }).subscribe((data: any) => {
+      this.onError = false
       // save to store parameter
       StorageService.setToken(data.token)
-      this.onError = false
       // redirect to admin home
       this.router.navigateByUrl('/admin/home');
     }, (error: any) => {
-      this.onError = true
+      if (error.status == 433) {
+        this.router.navigateByUrl('/admin/toactivate')
+      } else {
+        this.onError = true
+      }
     })
   }
 

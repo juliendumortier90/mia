@@ -14,6 +14,7 @@ import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { NewsComponent } from './news/news.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AdminLoginComponent } from './admin/login/login.component';
+import { AdminAddUserComponent } from './admin/add-user/add-user.component';
 import { AdminHomeComponent } from './admin/home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminArticlesComponent } from './admin/articles/articles.component';
@@ -29,6 +30,7 @@ import { NgxPayPalModule } from 'ngx-paypal';
 import { PaypalSuccessComponent } from './shop/success/success.component';
 import { Router } from '@angular/router';
 import { AuthInterceptor } from './util/http.interceptor';
+import { AdminToActivateComponent } from './admin/toactivate/toactivate.component';
 
 @NgModule({
   declarations: [
@@ -40,13 +42,15 @@ import { AuthInterceptor } from './util/http.interceptor';
     NewsComponent,
     AssociationComponent,
     AdminLoginComponent,
+    AdminAddUserComponent,
     AdminHomeComponent,
     AdminArticlesComponent,
     AdminArticleComponent,
     ConfirmationDialogComponent,
     CartComponent,
     PaypalComponent,
-    PaypalSuccessComponent
+    PaypalSuccessComponent,
+    AdminToActivateComponent
   ],
   imports: [
     CommonModule,
@@ -58,7 +62,8 @@ import { AuthInterceptor } from './util/http.interceptor';
     FontAwesomeModule,
     BrowserAnimationsModule,
     NgxPayPalModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    
   ],
   providers: [ {
     provide: HTTP_INTERCEPTORS,

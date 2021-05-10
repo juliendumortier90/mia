@@ -4,11 +4,11 @@ import { StorageService } from 'src/app/util/storage/storageService';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-toactivate',
+  templateUrl: './toactivate.component.html',
+  styleUrls: ['./toactivate.component.css']
 })
-export class AdminHomeComponent implements OnInit {
+export class AdminToActivateComponent implements OnInit {
 
   private readonly isBrowser: boolean = typeof window !== 'undefined';
 
@@ -16,10 +16,10 @@ export class AdminHomeComponent implements OnInit {
   
   ngOnInit() {}
 
-  navigate(goto: string) {
+  goHome() {
     if (this.isBrowser) {
       window.scroll({ top: 0, left: 0, behavior: 'auto' });
     }
-    this.router.navigateByUrl(goto);
+    this.router.navigateByUrl('/');
   }
 }

@@ -1,0 +1,33 @@
+
+<section class="page-section cta">
+  <div class="container login-container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-upper">Création de compte</span>
+            </h2>
+            <div class="login">
+              <label class="login-item" for="login-in">Email
+                <input type="text" class="form-control" id="login-in" [(ngModel)]="login">
+              </label>
+            </div>
+
+            <div class="mdp">
+              <label class="password-item" for="password-in">Mot de passe
+                <input type="password" class="form-control" id="password-in" [(ngModel)]="password">
+              </label>
+            </div>
+            <div class="mdp">
+              <label class="password-item" for="password2-in">Confirmation<span class="conf" *ngIf="passwordConfError()">**</span>
+                <input type="password" class="form-control" id="password2-in" [(ngModel)]="password2">
+              </label>
+            </div>
+            <div class="login-error" *ngIf="inError">Erreur l'identifiant n'est pas un email ou le mot de passe est trop court</div>
+            <div class="login-error" *ngIf="alreadyUseEmail">Erreur l'email est déjà utilisé</div>
+            <a class="btn btn-primary btn-xl" [ngClass]="[login.length == 0 || password2.length == 0 || passwordConfError() ? 'disabled disabled-btn' : '']" (click)="onAddUser()">Créer le compte</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
