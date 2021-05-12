@@ -1,0 +1,15 @@
+<div class="container shop-container container-shop-title">
+  <a class="btn-add btn btn-primary btn-sm btn-marged" (click)="addMember()">Ajouter un membre</a>
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let member of members">
+      <div class="product-grid">
+        {{ member.name }}
+        {{ member.firstName }}
+        {{ member.dateOfBirth }}
+        {{ member.phoneNumber }}
+        {{ member.email }}
+        {{ member.city }}
+      </div>
+    </div>
+  </div>
+</div>

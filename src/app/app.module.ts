@@ -31,6 +31,7 @@ import { PaypalSuccessComponent } from './shop/success/success.component';
 import { Router } from '@angular/router';
 import { AuthInterceptor } from './util/http.interceptor';
 import { AdminToActivateComponent } from './admin/toactivate/toactivate.component';
+import { AdminMembersComponent } from './admin/members/members.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { AdminToActivateComponent } from './admin/toactivate/toactivate.componen
     CartComponent,
     PaypalComponent,
     PaypalSuccessComponent,
-    AdminToActivateComponent
+    AdminToActivateComponent,
+    AdminMembersComponent
   ],
   imports: [
     CommonModule,
