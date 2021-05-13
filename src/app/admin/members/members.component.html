@@ -1,15 +1,40 @@
-<div class="container shop-container container-shop-title">
-  <a class="btn-add btn btn-primary btn-sm btn-marged" (click)="addMember()">Ajouter un membre</a>
-  <div class="row">
-    <div class="col-sm-4" *ngFor="let member of members">
-      <div class="product-grid">
-        {{ member.name }}
-        {{ member.firstName }}
-        {{ member.dateOfBirth }}
-        {{ member.phoneNumber }}
-        {{ member.email }}
-        {{ member.city }}
+<section class="page-section cta">
+  <div class="container no-max-width">
+    <a class="btn-add btn btn-primary btn-sm btn-marged" (click)="addMember()">Ajouter un membre</a>
+    <span class="filter">Filtre: <input type="text" [(ngModel)]="filter" (ngModelChange)="updateFilteredMembers()"/></span>
+    <div class="row">
+      <div class="col-xl-9 mx-auto no-max-width">
+        <div class="cta-inner text-center rounded">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th scope="col">Nom</th>
+              <th scope="col">Prénom</th>
+              <th scope="col">Date de naissance</th>
+              <th scope="col">Téléphone</th>
+              <th scope="col">Email</th>
+              <th scope="col">Pratique</th>
+              <th scope="col">HelloAsso</th>
+              <th scope="col">A-Payé</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let member of filteredMembers" class="clickable" (click)="memberDetail(member)">
+              <td>{{ member.lastName }}</td>
+              <td>{{ member.firstName }}</td>
+              <td>{{ member.dateOfBirth | date: 'dd/MM/yyyy'}}</td>
+              <td>{{ member.phoneNumber }}</td>
+              <td>{{ member.email }}</td>
+              <td>{{ member.practice }}</td>
+              <td *ngIf="member.isHelloAsso"><span class="tilt">HelloAsso</span></td>
+              <td *ngIf="!member.isHelloAsso"><span class="tilt tilt-blue">Physique</span></td>
+              <td *ngIf="member.hasPaid"><span class="tilt">ok</span></td>
+              <td *ngIf="!member.hasPaid"><span class="tilt tile-red">ko</span></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>

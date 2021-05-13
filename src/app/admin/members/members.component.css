@@ -10,3 +10,37 @@
   font-family: "Raleway";
   margin-bottom: 20px;
 }
+
+.no-max-width {
+  max-width: inherit;
+}
+
+.tilt {
+  padding: 5px;
+  border-radius: 5px;
+  background: #00a907;
+  color: #fff;
+}
+
+.tilt-red {
+  background: #e21e1e;
+}
+
+.tilt-blue {
+  background: #2861db;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background: #eee;
+  transition: all 0.3s ease 0s;
+}
+
+.filter {
+  color: #fff;
+  font-family: "Raleway";
+  margin-left: 44px;
+}
