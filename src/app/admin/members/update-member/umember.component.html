@@ -8,14 +8,15 @@
             <div class="col-xl-12">
               <div class="cta-inner text-center rounded">
                   <div class="button-edit">
-                    <a class="btn btn-primary btn-sm btn-marged" (click)="onChangePayStatus()">Changer le statut de paiement</a>
+                    <a class="btn btn-primary btn-sm btn-marged" (click)="onChangePayStatus()" *ngIf="!member.isHelloAsso">Changer le statut de paiement</a>
                     <a class="btn btn-primary btn-sm" (click)="goBack()">Retour</a>
                   </div>
+                  <div class="article-stock"><span class="subtitle">Date de l'ajout:</span> {{ member.creationDate | date: 'dd/MM/yyyy' }}</div>
+                  <div class="article-stock"><span class="subtitle">Email:</span> {{ member.email }}</div>
                   <div class="article-name"><span class="subtitle">Nom:</span> {{ member.lastName }}</div>
                   <div class="article-id"><span class="subtitle">Prénom:</span> {{ member.firstName }}</div>
                   <div class="article-type"><span class="subtitle">Date de naissance:</span> {{ member.dateOfBirth | date: 'dd/MM/yyyy' }}</div>
                   <div class="article-price"><span class="subtitle">Téléphone:</span> {{ member.phoneNumber }}</div>
-                  <div class="article-stock"><span class="subtitle">Email:</span> {{ member.email }}</div>
                   <div class="article-stock"><span class="subtitle">Adresse:</span> {{ member.address }} {{ member.postalCode }} {{ member.city }}</div>
                   <div class="article-stock"><span class="subtitle">Pratique:</span> {{ member.practice }}</div>
                   <div class="article-stock"><span class="subtitle">HelloAsso:</span> <span *ngIf="member.isHelloAsso"> OUI</span><span *ngIf="!member.isHelloAsso"> NON</span></div>

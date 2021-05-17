@@ -33,6 +33,7 @@ import { AuthInterceptor } from './util/http.interceptor';
 import { AdminToActivateComponent } from './admin/toactivate/toactivate.component';
 import { AdminMembersComponent } from './admin/members/members.component';
 import { AdminUpdateMemberComponent } from './admin/members/update-member/umember.component';
+import { AdminAddMemberComponent } from './admin/members/add-member/add-member.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { AdminUpdateMemberComponent } from './admin/members/update-member/umembe
     PaypalSuccessComponent,
     AdminToActivateComponent,
     AdminMembersComponent,
-    AdminUpdateMemberComponent
+    AdminUpdateMemberComponent,
+    AdminAddMemberComponent
   ],
   imports: [
     CommonModule,

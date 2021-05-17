@@ -1,0 +1,69 @@
+
+<section class="page-section cta">
+  <div class="container login-container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-upper">Création de membre</span>
+            </h2>
+            <div class="login">
+              <label class="login-item" for="login-in">Email
+                <input type="text" class="form-control" id="login-in" [(ngModel)]="member.email">
+              </label>
+            </div>
+            <div class="login">
+              <label class="login-item" for="login-in">Nom
+                <input type="text" class="form-control" id="login-in" [(ngModel)]="member.lastName">
+              </label>
+            </div>
+            <div class="login">
+              <label class="login-item" for="login-in">Prénom
+                <input type="text" class="form-control" id="login-in" [(ngModel)]="member.firstName">
+              </label>
+            </div>
+            <div class="login">
+              <label class="login-item" for="login-in">Date de naissance (ex: 01/01/1990)
+                <input type="text" class="form-control" id="login-in" [(ngModel)]="member.dateOfBirth">
+              </label>
+            </div>
+            <div class="login">
+              <label class="login-item" for="login-in">Téléphone
+                <input type="text" class="form-control" id="login-in" [(ngModel)]="member.phoneNumber">
+              </label>
+            </div>
+            <div class="login">
+              <label class="login-item" for="login-in">Adresse
+                <input type="text" class="form-control" id="login-in" [(ngModel)]="member.address">
+              </label>
+            </div>
+            <div class="login">
+              <label class="login-item" for="login-in">Code postal
+                <input type="text" class="form-control" id="login-in" [(ngModel)]="member.postalCode">
+              </label>
+            </div>
+            <div class="login">
+              <label class="login-item" for="login-in">Ville
+                <input type="text" class="form-control" id="login-in" [(ngModel)]="member.city">
+              </label>
+            </div>
+            <div class="login">
+              <label class="login-item" for="login-in">Pratique
+                <input type="text" class="form-control" id="login-in" [(ngModel)]="member.practice">
+              </label>
+            </div>
+            <div class="login">
+              <label class="login-item" for="login-in">A payé
+                <input type="text" class="form-control" id="login-in" [(ngModel)]="member.hasPaid">
+              </label>
+            </div>
+            <div class="login-error" *ngIf="inEmailError">L'adresse email n'est pas correcte</div>
+            <div class="login-error" *ngIf="dateError">La date de naissance n'est pas correcte</div>
+            <div class="login-error" *ngIf="alreadyUseEmail">L'adresse email est déjà utilisée</div>
+            <div class="login-error" *ngIf="otherError">Une erreur est survenue, contactez Julien Dumortier</div>
+            <a class="btn btn-primary btn-xl" [ngClass]="[member.email.length == 0 || member.lastName.length == 0 || member.firstName.length == 0  ? 'disabled disabled-btn' : '']" (click)="onAddMember()">Créer le membre</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

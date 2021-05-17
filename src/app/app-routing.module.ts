@@ -5,6 +5,7 @@ import { AdminArticleComponent } from './admin/articles/article/article.componen
 import { AdminArticlesComponent } from './admin/articles/articles.component';
 import { AdminHomeComponent } from './admin/home/home.component';
 import { AdminLoginComponent } from './admin/login/login.component';
+import { AdminAddMemberComponent } from './admin/members/add-member/add-member.component';
 import { AdminMembersComponent } from './admin/members/members.component';
 import { AdminUpdateMemberComponent } from './admin/members/update-member/umember.component';
 import { AdminToActivateComponent } from './admin/toactivate/toactivate.component';
@@ -91,6 +92,13 @@ const routes: Routes = [
     {
         path: 'admin/update-member',
         component: AdminUpdateMemberComponent,
+        canActivate: [
+            HasRoleGuard
+        ]
+    },
+    {
+        path: 'admin/add-member',
+        component: AdminAddMemberComponent,
         canActivate: [
             HasRoleGuard
         ]
