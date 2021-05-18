@@ -48,13 +48,19 @@
               </label>
             </div>
             <div class="login">
-              <label class="login-item" for="login-in">Pratique
-                <input type="text" class="form-control" id="login-in" [(ngModel)]="member.practice">
+              <label class="login-item" for="login-in">Pratique<br/>
+                <select (change)="practiceChange($event.target.value)">
+                  <option value="bmx" selected>bmx</option>
+                  <option value="skate">skate</option>
+                  <option value="roller">roller</option>
+                  <option value="trotinette">trotinette</option>
+                  <option value="autre">autre</option>
+                </select>
               </label>
             </div>
             <div class="login">
               <label class="login-item" for="login-in">A payé
-                <input type="text" class="form-control" id="login-in" [(ngModel)]="member.hasPaid">
+                <input type="checkbox" class="form-control" id="login-in" [(ngModel)]="member.hasPaid">
               </label>
             </div>
             <div class="login-error" *ngIf="inEmailError">L'adresse email n'est pas correcte</div>

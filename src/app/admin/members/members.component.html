@@ -22,7 +22,7 @@
             <tr *ngFor="let member of filteredMembers" class="clickable" (click)="memberDetail(member)">
               <td>{{ member.lastName }}</td>
               <td>{{ member.firstName }}</td>
-              <td>{{ member.dateOfBirth | date: 'dd/MM/yyyy'}}</td>
+              <td>{{ member.dateOfBirth}}</td>
               <td>{{ member.phoneNumber }}</td>
               <td>{{ member.email }}</td>
               <td>{{ member.practice }}</td>

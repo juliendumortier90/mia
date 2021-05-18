@@ -42,7 +42,7 @@ export class AdminAddMemberComponent implements OnInit {
     this.alreadyUseEmail = false
     this.otherError = false
     this.dateError = false
-    if (10 !== this.member.dateOfBirth.length) {
+    if (10 !== this.member.dateOfBirth.length || !this.isValidDate(this.member.dateOfBirth)) {
       this.dateError = true
     } else if (this.iValidEmail(this.member.email) == false) {
       this.inEmailError = true
@@ -59,8 +59,20 @@ export class AdminAddMemberComponent implements OnInit {
     }
   }
   
+  isValidDate(date) {
+    if (date.length == 0)
+      return true
+    // your desired pattern
+    var pattern = /(0\d{1}|1[0-2])\/([0-2]\d{1}|3[0-1])\/(19|20)(\d{2})/
+    return date.match(pattern)
+  }
+
   iValidEmail(email) {
     const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
+  }
+
+  practiceChange(practice) {
+    this.member.practice = practice
   }
 }
