@@ -35,9 +35,13 @@ export class AdminMembersComponent implements OnInit {
   }
 
   updateFilteredMembers() {
-    this.filteredMembers = this.members.filter(member => 
-      JSON.stringify(member).includes(this.filter)
-    )
+    if (this.filter == '') {
+      this.filteredMembers = this.members
+    } else {
+      this.filteredMembers = this.members.filter(member => 
+        JSON.stringify(member).toLowerCase().includes(this.filter.toLowerCase())
+      )
+    }
   }
 
   memberDetail(member: any) {

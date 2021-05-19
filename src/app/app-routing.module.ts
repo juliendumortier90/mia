@@ -8,6 +8,8 @@ import { AdminLoginComponent } from './admin/login/login.component';
 import { AdminAddMemberComponent } from './admin/members/add-member/add-member.component';
 import { AdminMembersComponent } from './admin/members/members.component';
 import { AdminUpdateMemberComponent } from './admin/members/update-member/umember.component';
+import { AdminOrdersComponent } from './admin/orders/orders.component';
+import { AdminUpdateOrderComponent } from './admin/orders/update-order/uorder.component';
 import { AdminToActivateComponent } from './admin/toactivate/toactivate.component';
 import { AssociationComponent } from './association/association.component';
 import { HomeComponent } from './home/home.component';
@@ -19,7 +21,6 @@ import { ShopComponent } from './shop/shop.component';
 import { PaypalSuccessComponent } from './shop/success/success.component';
 import { SkateparkComponent } from './skatepark/skatepark.component';
 import { HasRoleGuard } from './util/guard/hasRoleGuard';
-import { IsLoggedInGuard } from './util/guard/isLoggedInQuard';
 
 const routes: Routes = [
     {
@@ -113,6 +114,20 @@ const routes: Routes = [
     {
         path: 'admin/article',
         component: AdminArticleComponent,
+        canActivate: [
+            HasRoleGuard
+        ]
+    },
+    {
+        path: 'admin/shop-orders',
+        component: AdminOrdersComponent,
+        canActivate: [
+            HasRoleGuard
+        ]
+    },
+    {
+        path: 'admin/update-order',
+        component: AdminUpdateOrderComponent,
         canActivate: [
             HasRoleGuard
         ]

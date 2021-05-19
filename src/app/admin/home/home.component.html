@@ -28,7 +28,7 @@
                 <h2 class="section-heading mb-4">
                   <span class="section-heading-upper">Shop</span>
                 </h2>
-                <p class="mb-0">Ce menu permet de d'acceder à la gestion des articles en vente. Attention à ne pas faire de bêtises !</p>
+                <p class="mb-0">Ce menu permet de d'acceder à la gestion des articles en vente.</p>
                 <br />
                 <a class="btn btn-primary btn-xl" (click)="navigate('/admin/articles')">Voir les articles</a>
               </div>
@@ -37,7 +37,7 @@
         </div>
         </section>
       </div>
-      <div class="col-md-4 mx-auto" *ngIf="hasRole('/admin/orders')">
+      <div class="col-md-4 mx-auto" *ngIf="hasRole('/admin/shop-orders')">
         <section class="page-section cta">
         <div class="container">
           <div class="row">
@@ -46,9 +46,9 @@
                 <h2 class="section-heading mb-4">
                   <span class="section-heading-upper">Commandes</span>
                 </h2>
-                <p class="mb-0">Ce menu permet de visualiser les commandes et les rapports de comptabilité.</p>
+                <p class="mb-0">Ce menu permet de visualiser les commandes passés par les clients.</p>
                 <br />
-                <a class="btn btn-primary btn-xl" (click)="navigate('/admin/orders')">Voir les commandes</a>
+                <a class="btn btn-primary btn-xl" (click)="navigate('/admin/shop-orders')">Voir les commandes</a>
               </div>
             </div>
           </div>

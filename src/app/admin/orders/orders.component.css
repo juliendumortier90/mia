@@ -1,0 +1,62 @@
+.container-shop-title {
+  padding-top: 74px;
+}
+
+.shop-container {
+  margin-bottom: 100px;
+}
+
+.btn-add {
+  font-family: "Raleway";
+  margin-bottom: 20px;
+}
+
+.no-max-width {
+  max-width: inherit;
+}
+
+.tilt {
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.tilt-blue {
+  background: #2861db;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background: #eee;
+  transition: all 0.3s ease 0s;
+}
+
+.filter {
+  color: #fff;
+  font-family: "Raleway";
+  margin-left: 44px;
+}
+
+.red {
+  background: #e33 !important;
+}
+
+.orang {
+  background: rgb(207, 122, 24) !important;
+}
+
+.green {
+  background: rgb(0 185 39) !important;
+}
+
+.btn-add {
+  font-family: "Raleway";
+  margin-bottom: 20px;
+}
+
+.content {
+  margin-top: 20px;
+}

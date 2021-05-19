@@ -1,0 +1,37 @@
+<section class="page-section cta">
+  <div class="container no-max-width">
+    <span class="filter">Filtre: <input type="text" [(ngModel)]="filter" (ngModelChange)="updateFilteredOrders()"/></span>
+      <div class="content">
+      <div class="row">
+        <div class="col-xl-9 mx-auto no-max-width">
+          <div class="cta-inner text-center rounded">
+            <table class="table table-striped">
+              <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Date</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">Articles</th>
+                <th scope="col">Statut</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let order of filteredOrders" class="clickable" (click)="orderDetail(order)">
+                <td>{{ order.id }}</td>
+                <td>{{ order.transactionDate }}</td>
+                <td>{{ order.payer.name.given_name }}</td>
+                <td>{{ order.payer.name.surname }}</td>
+                <td>{{ order.paypalItems.length }}</td>
+                <td *ngIf="order.status == 'TO_SEND'"><span class="tilt red">A ENVOYER</span></td>
+                <td *ngIf="order.status == 'WAITING'"><span class="tilt orang">EN ATTENTE</span></td>
+                <td *ngIf="order.status == 'SENT'"><span class="tilt green">ENVOYEE</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

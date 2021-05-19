@@ -34,6 +34,8 @@ import { AdminToActivateComponent } from './admin/toactivate/toactivate.componen
 import { AdminMembersComponent } from './admin/members/members.component';
 import { AdminUpdateMemberComponent } from './admin/members/update-member/umember.component';
 import { AdminAddMemberComponent } from './admin/members/add-member/add-member.component';
+import { AdminOrdersComponent } from './admin/orders/orders.component';
+import { AdminUpdateOrderComponent } from './admin/orders/update-order/uorder.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { AdminAddMemberComponent } from './admin/members/add-member/add-member.c
     AdminToActivateComponent,
     AdminMembersComponent,
     AdminUpdateMemberComponent,
-    AdminAddMemberComponent
+    AdminAddMemberComponent,
+    AdminOrdersComponent,
+    AdminUpdateOrderComponent
   ],
   imports: [
     CommonModule,
