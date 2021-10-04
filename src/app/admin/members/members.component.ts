@@ -34,6 +34,10 @@ export class AdminMembersComponent implements OnInit {
     return this.http.get<any>('https://sb59re9hg9.execute-api.eu-west-1.amazonaws.com/integ/member/list-members')
   }
 
+  hasEmail(mail): boolean {
+    return !JSON.stringify(mail).includes('sansmail')
+  }
+
   updateFilteredMembers() {
     if (this.filter == '') {
       this.filteredMembers = this.members

@@ -24,7 +24,8 @@
               <td>{{ member.firstName }}</td>
               <td>{{ member.dateOfBirth}}</td>
               <td>{{ member.phoneNumber }}</td>
-              <td>{{ member.email }}</td>
+              <td *ngIf="!hasEmail(member.email)">Pas d'email</td>
+              <td *ngIf="hasEmail(member.email)">{{ member.email }}</td>
               <td>{{ member.practice }}</td>
               <td *ngIf="member.isHelloAsso"><span class="tilt">HelloAsso</span></td>
               <td *ngIf="!member.isHelloAsso"><span class="tilt tilt-blue">Physique</span></td>

@@ -32,6 +32,10 @@ export class AdminUpdateMemberComponent implements OnInit {
     })
   }
 
+  hasEmail(mail): boolean {
+    return !JSON.stringify(mail).includes('sansmail')
+  }
+
   changePayStatusMember() {
     this.http.post('https://sb59re9hg9.execute-api.eu-west-1.amazonaws.com/integ/member/update-paid', this.member)
         .subscribe((data: any) => {
