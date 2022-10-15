@@ -5,6 +5,15 @@ h3.h3 {
   font-size: 1.7em;
 }
 
+.shop-title {
+  padding-bottom: 12px;
+}
+
+.mail-contact {
+  color: #e7a756;
+  font-weight: bold;
+}
+
 /********************* shopping Demo-1 **********************/
 .product-grid {
   max-width: 274px;
