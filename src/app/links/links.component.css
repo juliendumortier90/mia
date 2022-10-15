@@ -1,0 +1,13 @@
+.section-heading-lower {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e7a756;
+}
+
+.list-hours-item {
+    cursor: pointer;
+}
+
+.list-hours-item:hover {
+    color: #e7a756;
+}

@@ -247,7 +247,7 @@ p {
 
 @media (min-width: 992px) {
   .list-hours {
-    width: 50%;
+    width: 70%;
     font-size: 1.1rem;
   }
 }

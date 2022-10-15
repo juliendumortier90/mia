@@ -21,7 +21,7 @@ export class ShopComponent implements OnInit {
 
   addToCart(article) {
     StorageService.addCartItem(article)
-    this.router.navigateByUrl('/shop/cart')
+    // this.router.navigateByUrl('/shop/cart')
   }
 
   getNbItemInCart(item) {

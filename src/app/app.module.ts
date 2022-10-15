@@ -36,6 +36,7 @@ import { AdminUpdateMemberComponent } from './admin/members/update-member/umembe
 import { AdminAddMemberComponent } from './admin/members/add-member/add-member.component';
 import { AdminOrdersComponent } from './admin/orders/orders.component';
 import { AdminUpdateOrderComponent } from './admin/orders/update-order/uorder.component';
+import { LinksComponent } from './links/links.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { AdminUpdateOrderComponent } from './admin/orders/update-order/uorder.co
     CartComponent,
     PaypalComponent,
     PaypalSuccessComponent,
+    LinksComponent,
     AdminToActivateComponent,
     AdminMembersComponent,
     AdminUpdateMemberComponent,
