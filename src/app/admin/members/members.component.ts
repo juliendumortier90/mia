@@ -28,7 +28,13 @@ export class AdminMembersComponent implements OnInit {
     this.getMembers().subscribe((data: any[]) => {
       this.members = data
       this.updateFilteredMembers()
+      console.log(new Date(this.members[0].creationDate))
     })
+  }
+
+  formatDate(date: string) {
+    var parts = date.split('/');
+    return new Date(parts[2], parts[1] - 1, parts[0]).getTime(); 
   }
 
   private getMembers(): Observable<any[]> {
@@ -41,11 +47,11 @@ export class AdminMembersComponent implements OnInit {
 
   updateFilteredMembers() {
     if (this.filter == '') {
-      this.filteredMembers = this.members
+      this.filteredMembers = this.members.sort((m1, m2) => this.formatDate(m2.creationDate) - this.formatDate(m1.creationDate))
     } else {
       this.filteredMembers = this.members.filter(member => 
         JSON.stringify(member).toLowerCase().includes(this.filter.toLowerCase())
-      )
+      ).sort((m1, m2) => this.formatDate(m2.creationDate) - this.formatDate(m1.creationDate))
     }
   }
 

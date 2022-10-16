@@ -10,6 +10,7 @@
           <table class="table table-striped">
             <thead>
             <tr>
+              <th scope="col">Date d'ajout</th>
               <th scope="col">Nom</th>
               <th scope="col">Prénom</th>
               <th scope="col">Date de naissance</th>
@@ -22,6 +23,7 @@
             </thead>
             <tbody>
             <tr *ngFor="let member of filteredMembers" class="clickable" (click)="memberDetail(member)">
+              <td>{{ member.creationDate }}</td>
               <td>{{ member.lastName }}</td>
               <td>{{ member.firstName }}</td>
               <td>{{ member.dateOfBirth}}</td>
