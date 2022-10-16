@@ -1,6 +1,8 @@
 <section class="page-section cta">
   <div class="container no-max-width">
     <a class="btn-add btn btn-primary btn-sm btn-marged" (click)="addMember()">Ajouter un membre</a>
+    <a class="btn-add btn btn-primary btn-sm btn-marged" (click)="downloadMembers()">Exporter la liste des membres</a>
+    <a class="btn-add btn btn-primary btn-sm btn-marged" (click)="statistics()">Statistiques</a>
     <span class="filter">Filtre: <input type="text" [(ngModel)]="filter" (ngModelChange)="updateFilteredMembers()"/></span>
     <div class="row">
       <div class="col-xl-9 mx-auto no-max-width">

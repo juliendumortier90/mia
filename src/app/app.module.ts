@@ -37,6 +37,7 @@ import { AdminAddMemberComponent } from './admin/members/add-member/add-member.c
 import { AdminOrdersComponent } from './admin/orders/orders.component';
 import { AdminUpdateOrderComponent } from './admin/orders/update-order/uorder.component';
 import { LinksComponent } from './links/links.component';
+import { AdminStatisticsComponent } from './admin/statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { LinksComponent } from './links/links.component';
     AdminUpdateMemberComponent,
     AdminAddMemberComponent,
     AdminOrdersComponent,
-    AdminUpdateOrderComponent
+    AdminUpdateOrderComponent,
+    AdminStatisticsComponent
   ],
   imports: [
     CommonModule,

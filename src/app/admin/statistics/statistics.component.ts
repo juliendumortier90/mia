@@ -6,59 +6,43 @@ import { FormControl } from '@angular/forms';
 import { saveAs } from 'file-saver';
 
 @Component({
-  selector: 'app-members',
-  templateUrl: './members.component.html',
-  styleUrls: ['./members.component.css']
+  selector: 'app-statistics',
+  templateUrl: './statistics.component.html',
+  styleUrls: ['./statistics.component.css']
 })
-export class AdminMembersComponent implements OnInit {
+export class AdminStatisticsComponent implements OnInit {
 
   members = []
   filteredMembers = []
   filter = ''
+
+  members2021 = 0
+  members2022 = 0
+  male = 0
+  female = 0
+  femalePercent = 0
 
   constructor(private http: HttpClient,
     private router: Router) {
   }
 
   ngOnInit() {
-    this.updateMembers()
-  }
-
-  private updateMembers() {
     this.getMembers().subscribe((data: any[]) => {
       this.members = data
-      this.updateFilteredMembers()
+      this.members2021 = this.members.filter(member => member.creationDate.indexOf('/2021') >= 0).length
+      this.members2022 = this.members.filter(member => member.creationDate.indexOf('/2022') >= 0).length
+      this.male = this.members.filter(member => member.sexe?.indexOf('HOMME') >= 0).length
+      this.female = this.members.filter(member => member.sexe?.indexOf('FEMME') >= 0).length
+      this.femalePercent = this.female *100/(this.male + this.female)
     })
+  }
+
+  navigate(goto: string) {
+    this.router.navigateByUrl(goto);
   }
 
   private getMembers(): Observable<any[]> {
     return this.http.get<any>('https://sb59re9hg9.execute-api.eu-west-1.amazonaws.com/integ/member/list-members')
-  }
-
-  hasEmail(mail): boolean {
-    return !JSON.stringify(mail).includes('sansmail')
-  }
-
-  updateFilteredMembers() {
-    if (this.filter == '') {
-      this.filteredMembers = this.members
-    } else {
-      this.filteredMembers = this.members.filter(member => 
-        JSON.stringify(member).toLowerCase().includes(this.filter.toLowerCase())
-      )
-    }
-  }
-
-  memberDetail(member: any) {
-    this.router.navigateByUrl('/admin/update-member', { state: {member: member}})
-  }
-
-  addMember() {
-    this.router.navigateByUrl('/admin/add-member')
-  }
-
-  statistics() {
-    this.router.navigateByUrl('/admin/statistics')
   }
 
   downloadMembers() {

@@ -26,6 +26,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@ng-bootstrap/ng-bootstrap": "^9.1.0",
     "angular-in-memory-web-api": "~0.11.0",
+    "file-saver": "^2.0.5",
     "ngx-paypal": "^7.0.0",
     "ngx-scrolltop": "^2.0.3",
     "ngx-toastr": "^13.2.1",

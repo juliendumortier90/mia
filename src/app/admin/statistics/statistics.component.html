@@ -1,0 +1,36 @@
+<section class="page-section cta">
+  <div class="container no-max-width">
+    <a class="btn-add btn btn-primary btn-sm btn-marged" (click)="downloadMembers()">Exporter la liste des membres</a>
+    <a class="btn-add btn btn-primary btn-sm btn-marged" (click)="navigate('/admin/members')">Retour à la liste des membres</a>
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <div class="cta-inner bg-faded text-center rounded">
+                        <h2 class="section-heading mb-5">
+                            <span class="section-heading-lower">Statistiques membres</span>
+                            <span class="section-heading-upper">adhésions annuelles</span>
+                        </h2>
+                        <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                Nombre d'adhérents 2021 : {{ members2021 }}
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                Nombre d'adhérents 2022 : {{ members2022 }}
+                            </li>
+                        </ul>
+                        <h2 class="section-heading mb-5">
+                            <span class="section-heading-upper">Données toutes années</span>
+                        </h2>
+                        <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                pourcentage de femme : {{ femalePercent | number:'1.0-0' }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</section>

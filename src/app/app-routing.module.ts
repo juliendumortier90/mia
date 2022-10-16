@@ -22,6 +22,7 @@ import { ShopComponent } from './shop/shop.component';
 import { PaypalSuccessComponent } from './shop/success/success.component';
 import { SkateparkComponent } from './skatepark/skatepark.component';
 import { HasRoleGuard } from './util/guard/hasRoleGuard';
+import { AdminStatisticsComponent } from './admin/statistics/statistics.component';
 
 const routes: Routes = [
     {
@@ -95,6 +96,10 @@ const routes: Routes = [
         canActivate: [
             HasRoleGuard
         ]
+    },
+    {
+        path: 'admin/statistics',
+        component: AdminStatisticsComponent
     },
     {
         path: 'admin/update-member',

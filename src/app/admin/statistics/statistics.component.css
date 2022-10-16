@@ -2,6 +2,12 @@
   padding-top: 74px;
 }
 
+.section-heading-lower {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e7a756;
+}
+
 .shop-container {
   margin-bottom: 100px;
 }
