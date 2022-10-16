@@ -34,7 +34,7 @@ export class AdminMembersComponent implements OnInit {
 
   formatDate(date: string) {
     var parts = date.split('/');
-    return new Date(parts[2], parts[1] - 1, parts[0]).getTime(); 
+    return new Date(+parts[2], +parts[1] - 1, +parts[0]).getTime(); 
   }
 
   private getMembers(): Observable<any[]> {
