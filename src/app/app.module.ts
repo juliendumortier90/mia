@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { CommonModule } from "@angular/common";
 import { SkateparkComponent } from './skatepark/skatepark.component';
 import { ShopComponent } from './shop/shop.component';
+import { WorkshopsComponent } from './workshop/workshops.component';
 import { AssociationComponent } from './association/association.component';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { NewsComponent } from './news/news.component';
@@ -46,6 +47,7 @@ import { AdminStatisticsComponent } from './admin/statistics/statistics.componen
     HomeComponent,
     SkateparkComponent,
     ShopComponent,
+    WorkshopsComponent,
     NewsComponent,
     AssociationComponent,
     AdminLoginComponent,

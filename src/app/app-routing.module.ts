@@ -18,6 +18,7 @@ import { PartenaireComponent } from './partenaire/partenaire.component';
 import { LinksComponent } from './links/links.component';
 // import { CartComponent } from './shop/cart/cart.component';
 // import { PaypalComponent } from './shop/paypal/paypal.component';
+import { WorkshopsComponent } from './workshop/workshops.component';
 import { ShopComponent } from './shop/shop.component';
 import { PaypalSuccessComponent } from './shop/success/success.component';
 import { SkateparkComponent } from './skatepark/skatepark.component';
@@ -45,6 +46,10 @@ const routes: Routes = [
     {
         path: 'association',
         component: AssociationComponent
+    },
+    {
+        path: 'workshops',
+        component: WorkshopsComponent
     },
     {
         path: 'partenaire',
