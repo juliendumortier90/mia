@@ -31,7 +31,7 @@ export class AdminAddUserComponent implements OnInit {
       this.inError = true
     } else {
       const md5 = Md5.hashStr(this.password)
-      this.http.post<any>('https://sb59re9hg9.execute-api.eu-west-1.amazonaws.com/integ/admin/add-user', {
+      this.http.post<any>('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/integ/admin/add-user', {
         login: this.login,
         password: this.password,
         passwordMd5: md5

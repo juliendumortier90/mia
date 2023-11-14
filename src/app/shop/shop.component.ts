@@ -36,6 +36,6 @@ export class ShopComponent implements OnInit {
   }
 
   private getArticles(): Observable<any[]> {
-    return this.http.get<any>('https://sb59re9hg9.execute-api.eu-west-1.amazonaws.com/integ/shop/list-items')
+    return this.http.get<any>('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/integ/shop/list-items')
   }
 }

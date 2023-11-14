@@ -40,6 +40,7 @@ import { AdminUpdateOrderComponent } from './admin/orders/update-order/uorder.co
 import { LinksComponent } from './links/links.component';
 import { AdminStatisticsComponent } from './admin/statistics/statistics.component';
 import { WorkshopRegisterComponent } from './workshop/workshop-register/workshop-register.component';
+import { WorkshopRegisterValidationComponent } from './workshop/workshop-register-validation/workshop-register-validation.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { WorkshopRegisterComponent } from './workshop/workshop-register/workshop
     ShopComponent,
     WorkshopsComponent,
     WorkshopRegisterComponent,
+    WorkshopRegisterValidationComponent,
     NewsComponent,
     AssociationComponent,
     AdminLoginComponent,

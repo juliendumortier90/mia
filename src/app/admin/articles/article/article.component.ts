@@ -105,7 +105,7 @@ export class AdminArticleComponent implements OnInit {
   }
 
   private callUpdateArticle(article) {
-    this.http.post('https://sb59re9hg9.execute-api.eu-west-1.amazonaws.com/integ/shop/add-item', article)
+    this.http.post('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/integ/shop/add-item', article)
         .subscribe((data: any) => {
           this.toastr.success('Article ajouté')
           this.goBack()
@@ -113,7 +113,7 @@ export class AdminArticleComponent implements OnInit {
   }
 
   private callDeleteArticle(article) {
-    this.http.post('https://sb59re9hg9.execute-api.eu-west-1.amazonaws.com/integ/shop/delete-item', { id: article.id})
+    this.http.post('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/integ/shop/delete-item', { id: article.id})
         .subscribe((data: any) => {
           this.toastr.success('Article supprimé')
           this.goBack()

@@ -43,7 +43,7 @@ export class AdminUpdateOrderComponent implements OnInit {
   }
 
   changeOrderStatus(status: string) {
-    this.http.post('https://sb59re9hg9.execute-api.eu-west-1.amazonaws.com/integ/admin/update-order-status', { id: this.order.id, status: status})
+    this.http.post('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/integ/admin/update-order-status', { id: this.order.id, status: status})
         .subscribe((data: any) => {
           this.toastr.success('Le statut de la commande a été mis à jour')
           this.goBack()
@@ -51,7 +51,7 @@ export class AdminUpdateOrderComponent implements OnInit {
   }
 
   changeOrderComment(comment: string) {
-    this.http.post('https://sb59re9hg9.execute-api.eu-west-1.amazonaws.com/integ/admin/update-order-comment', { id: this.order.id, comment: comment} )
+    this.http.post('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/integ/admin/update-order-comment', { id: this.order.id, comment: comment} )
         .subscribe((data: any) => {
           this.toastr.success('Le commentaire de la commande a été mis à jour')
           this.goBack()

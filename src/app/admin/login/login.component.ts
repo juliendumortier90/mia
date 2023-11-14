@@ -25,7 +25,7 @@ export class AdminLoginComponent implements OnInit {
   onLogin() {
     StorageService.clearTokenAndRoles()
     const md5 = Md5.hashStr(this.password)
-    this.http.post<any>('https://sb59re9hg9.execute-api.eu-west-1.amazonaws.com/integ/admin/login', {
+    this.http.post<any>('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/integ/admin/login', {
       login: this.login,
       password: md5
     }).subscribe((data: any) => {

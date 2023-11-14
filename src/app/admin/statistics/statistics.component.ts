@@ -42,7 +42,7 @@ export class AdminStatisticsComponent implements OnInit {
   }
 
   private getMembers(): Observable<any[]> {
-    return this.http.get<any>('https://sb59re9hg9.execute-api.eu-west-1.amazonaws.com/integ/member/list-members')
+    return this.http.get<any>('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/integ/member/list-members')
   }
 
   downloadMembers() {

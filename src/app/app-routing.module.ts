@@ -25,6 +25,7 @@ import { SkateparkComponent } from './skatepark/skatepark.component';
 import { HasRoleGuard } from './util/guard/hasRoleGuard';
 import { AdminStatisticsComponent } from './admin/statistics/statistics.component';
 import { WorkshopRegisterComponent } from './workshop/workshop-register/workshop-register.component';
+import { WorkshopRegisterValidationComponent } from './workshop/workshop-register-validation/workshop-register-validation.component';
 
 const routes: Routes = [
     {
@@ -55,6 +56,10 @@ const routes: Routes = [
     {
         path: 'workshop/register',
         component: WorkshopRegisterComponent
+    },
+    {
+        path: 'workshop/register/validation',
+        component: WorkshopRegisterValidationComponent
     },
     {
         path: 'partenaire',
