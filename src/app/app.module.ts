@@ -39,6 +39,7 @@ import { AdminOrdersComponent } from './admin/orders/orders.component';
 import { AdminUpdateOrderComponent } from './admin/orders/update-order/uorder.component';
 import { LinksComponent } from './links/links.component';
 import { AdminStatisticsComponent } from './admin/statistics/statistics.component';
+import { WorkshopRegisterComponent } from './workshop/workshop-register/workshop-register.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { AdminStatisticsComponent } from './admin/statistics/statistics.componen
     SkateparkComponent,
     ShopComponent,
     WorkshopsComponent,
+    WorkshopRegisterComponent,
     NewsComponent,
     AssociationComponent,
     AdminLoginComponent,

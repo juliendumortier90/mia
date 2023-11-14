@@ -24,6 +24,7 @@ import { PaypalSuccessComponent } from './shop/success/success.component';
 import { SkateparkComponent } from './skatepark/skatepark.component';
 import { HasRoleGuard } from './util/guard/hasRoleGuard';
 import { AdminStatisticsComponent } from './admin/statistics/statistics.component';
+import { WorkshopRegisterComponent } from './workshop/workshop-register/workshop-register.component';
 
 const routes: Routes = [
     {
@@ -50,6 +51,10 @@ const routes: Routes = [
     {
         path: 'workshops',
         component: WorkshopsComponent
+    },
+    {
+        path: 'workshop/register',
+        component: WorkshopRegisterComponent
     },
     {
         path: 'partenaire',

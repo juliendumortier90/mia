@@ -1,0 +1,58 @@
+
+<section class="page-section cta">
+  <div class="container login-container" *ngIf="!inInvitationSend">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-upper">Inscription au workshop {{wsName}}</span>
+            </h2>
+            <div class="login">
+              <label class="login-item" for="email-in">Email
+                <input type="text" class="form-control" id="email-in" [(ngModel)]="item.member.email">
+              </label>
+            </div>
+            <div class="login">
+              <label class="login-item" for="nom-in">Nom
+                <input type="text" class="form-control" id="nom-in" [(ngModel)]="item.member.lastname">
+              </label>
+            </div>
+            <div class="login">
+              <label class="login-item" for="pnom-in">Prénom
+                <input type="text" class="form-control" id="pnom-in" [(ngModel)]="item.member.firstname">
+              </label>
+            </div>
+            <div class="login">
+              <label class="login-item" for="phone-in">Téléphone
+                <input type="text" class="form-control" id="phone-in" [(ngModel)]="item.member.phoneNumber">
+              </label>
+            </div>
+            <div class="login">
+              <label class="login-item" for="des-in">Laisse nous un petit message pour nous dire en quoi tu peux nous aider.
+                <input type="text" class="form-control form-control-big" id="des-in" [(ngModel)]="item.member.description">
+              </label>
+            </div>
+            <div class="login-error" *ngIf="inEmailError">L'adresse email n'est pas correcte</div>
+            <div class="login-error" *ngIf="alreadyUseEmail">L'adresse email est déjà utilisée</div>
+            <a class="btn btn-primary btn-xl mybtn" [ngClass]="[item.member.email.length == 0 || item.member.lastname.length == 0 || item.member.firstname.length == 0  || item.member.phoneNumber.length == 0 || item.member.description.length == 0 ? 'disabled disabled-btn' : '']" (click)="onAddMember()">S'inscrire</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" *ngIf="inInvitationSend">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-upper">inscription envoyée</span>
+            <span class="section-heading-lower">MERCI</span>
+          </h2>
+          <p class="mb-0 shop-title">Nous venons de t'envoyer un email pour valider ta demande de participation. Merci de le consulter et valider ton adresse email.</p>
+          <div class="goto-button mx-auto">
+            <a class="btn btn-primary btn-xl" (click)="navigate('/')">Merci</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

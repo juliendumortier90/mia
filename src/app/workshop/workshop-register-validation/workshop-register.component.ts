@@ -15,6 +15,12 @@ interface Workshop {
   "type": "terrassement" | "feraillage" | "beton" | "rangement" | "divers"
 }
 
+/*
+  - formulaire
+  - deja inscrit
+  - un email a ete envoyé
+*/
+
 @Component({
   selector: 'app-workshops',
   templateUrl: './workshops.component.html',
@@ -41,10 +47,10 @@ export class WorkshopsComponent implements OnInit {
     return this.http.get<any>('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/prod/workshop/public-list-items')
   }
 
-  navigate(goto: string, item: Workshop) {
+  navigate(goto: string) {
     if (this.isBrowser) {
       window.scroll({ top: 0, left: 0, behavior: 'auto' });
     }
-    this.router.navigateByUrl(goto+'?wsName='+item.name+'&wsId='+item.id+'&wsStartDate='+item.startDate);
+    this.router.navigateByUrl(goto);
   }
 }
