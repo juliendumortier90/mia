@@ -28,6 +28,7 @@ import { WorkshopRegisterComponent } from './workshop/workshop-register/workshop
 import { WorkshopRegisterValidationComponent } from './workshop/workshop-register-validation/workshop-register-validation.component';
 import { AdminWorkshopsComponent } from './admin/workshops/workshops.component';
 import { AdminWorkshopDetailComponent } from './admin/workshops/workshop-detail/workshop-detail.component';
+import { AdminAddWorkshopComponent } from './admin/workshops/add-workshop/add-workshop.component';
 
 const routes: Routes = [
     {
@@ -142,6 +143,13 @@ const routes: Routes = [
     {
         path: 'admin/workshop/detail',
         component: AdminWorkshopDetailComponent,
+        /*TODO canActivate: [
+            HasRoleGuard
+        ]*/
+    },
+    {
+        path: 'admin/workshop/add',
+        component: AdminAddWorkshopComponent,
         /*TODO canActivate: [
             HasRoleGuard
         ]*/

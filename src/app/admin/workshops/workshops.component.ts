@@ -26,6 +26,7 @@ export class AdminWorkshopsComponent implements OnInit {
 
   constructor(private http: HttpClient,
     private router: Router) {
+      this.getWorkshops()
   }
 
   ngOnInit() {
@@ -39,7 +40,7 @@ export class AdminWorkshopsComponent implements OnInit {
   }
 
   addWorkshop() {
-    this.router.navigateByUrl('/admin/add-workshop')
+    this.router.navigateByUrl('/admin/workshop/add')
   }
 
   workshopDetail(ws: any) {

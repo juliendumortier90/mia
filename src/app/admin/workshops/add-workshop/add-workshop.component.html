@@ -1,0 +1,47 @@
+
+<section class="page-section cta">
+  <div class="container login-container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-upper">Création d'un workshop'</span>
+            </h2>
+            <div class="login">
+              <label class="login-item" for="login-in">Nom du workshop
+                <input type="text" class="form-control" id="login-in" [(ngModel)]="workshop.name">
+              </label>
+            </div>
+            <div class="login">
+              <label class="login-item" for="login-in">Date (ex: 01/01/1990)
+                <input type="text" class="form-control" id="login-in" [(ngModel)]="workshop.startDate">
+              </label>
+            </div>
+            <div class="login">
+              <label class="login-item" for="login-in">Description
+                <input type="text" class="form-control" id="login-in" [(ngModel)]="workshop.description">
+              </label>
+            </div>
+            <div class="login">
+              <label class="login-item" for="login-in">Nombre max de participant (indicatif)
+                <input type="text" class="form-control" id="login-in" [(ngModel)]="workshop.nbMax">
+              </label>
+            </div>
+            <div class="login">
+              <label class="login-item" for="login-in">Type<br/>
+                <select (change)="typeChange($event.target.value)">
+                  <option value="terrassement" selected>terrassement</option>
+                  <option value="ferraillage">ferraillage</option>
+                  <option value="beton">beton</option>
+                  <option value="rangement">rangement</option>
+                  <option value="divers">divers</option>
+                </select>
+              </label>
+            </div>
+            <div class="login-error" *ngIf="dateError">La date n'est pas correcte</div>
+            <a class="btn btn-primary btn-xl" [ngClass]="[workshop.description.length == 0 || workshop.name.length == 0 || workshop.startDate.length == 0  ? 'disabled disabled-btn' : '']" (click)="onAddWorkshop()">Créer le workshop</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
