@@ -11,9 +11,9 @@
               <th scope="col">Nom</th>
               <th scope="col">Date</th>
               <th scope="col">Description</th>
-              <th scope="col">Nombre de bénévole max</th>
-              <th scope="col">Nombre de sélectionné</th>
-              <th scope="col">Nombre de quandidature</th>
+              <th scope="col">Nombre de bénévoles max</th>
+              <th scope="col">Nombre de sélectionnés</th>
+              <th scope="col">Nombre de candidatures</th>
               <th scope="col">Type de WS</th>
               <th scope="col">id</th>
             </tr>
@@ -23,7 +23,7 @@
               <td *ngIf="ws.visible"><span class="tilt">oui</span></td>
               <td *ngIf="!ws.visible"><span class="tilt tilt-red">non</span></td>
               <td>{{ ws.name }}</td>
-              <td>{{ ws.startDate }}</td>
+              <td>{{ ws.startDate | date:'dd/MM/yyyy' }}</td>
               <td>{{ ws.description}}</td>
               <td>{{ ws.nbMax }}</td>
               <td>{{ ws.selectedMembers.length }}</td>

@@ -17,10 +17,10 @@
                     <span class="tilt tilt-red" *ngIf="!ws.visible">NON</span>
                   </div>
                   <div class="article-stock"><span class="subtitle">Nom:</span> {{ ws.name }}</div>
-                  <div class="article-name"><span class="subtitle">Date:</span> {{ ws.startDate }}</div>
+                  <div class="article-name"><span class="subtitle">Date:</span> {{ ws.startDate | date:'dd/MM/yyyy' }}</div>
                   <div class="article-id"><span class="subtitle">Description:</span> {{ ws.description }}</div>
                   <div class="article-type"><span class="subtitle">Nombre de bénévole max:</span> {{ ws.nbMax }}</div>
-                  <div class="article-price"><span class="subtitle">Nombre de quandidature:</span> {{ ws.members.length }}</div>
+                  <div class="article-price"><span class="subtitle">Nombre de candidature:</span> {{ ws.members.length }}</div>
                   <div class="article-stock"><span class="subtitle">Type de WS:</span> {{ ws.type }}</div>
                   <div class="article-stock"><span class="subtitle">id:</span> {{ ws.id }}</div>
               </div>
