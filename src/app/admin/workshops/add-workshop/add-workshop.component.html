@@ -5,10 +5,10 @@
       <div class="col-xl-9 mx-auto">
         <div class="cta-inner text-center rounded">
             <h2 class="section-heading mb-4">
-              <span class="section-heading-upper">Création d'un workshop'</span>
+              <span class="section-heading-upper">Création d'un atelier</span>
             </h2>
             <div class="login">
-              <label class="login-item" for="login-in">Nom du workshop
+              <label class="login-item" for="login-in">Nom de l'atelier
                 <input type="text" class="form-control" id="login-in" [(ngModel)]="workshop.name">
               </label>
             </div>
@@ -39,7 +39,7 @@
               </label>
             </div>
             <div class="login-error" *ngIf="dateError">La date n'est pas correcte</div>
-            <a class="btn btn-primary btn-xl" [ngClass]="[workshop.description.length == 0 || workshop.name.length == 0 || workshop.startDate.length == 0  ? 'disabled disabled-btn' : '']" (click)="onAddWorkshop()">Créer le workshop</a>
+            <a class="btn btn-primary btn-xl" [ngClass]="[workshop.description.length == 0 || workshop.name.length == 0 || workshop.startDate.length == 0  ? 'disabled disabled-btn' : '']" (click)="onAddWorkshop()">Créer l'atelier</a>
         </div>
       </div>
     </div>

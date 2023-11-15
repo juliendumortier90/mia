@@ -68,7 +68,7 @@ export class AdminWorkshopDetailComponent implements OnInit {
             "id": this.ws.id
         })
         .subscribe((data: any) => {
-          this.toastr.success('La visibilité du workshop a été mise à jour')
+          this.toastr.success("La visibilité de l'atelier a été mise à jour")
           this.goBack()
         })
   }
