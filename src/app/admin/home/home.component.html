@@ -18,7 +18,26 @@
           </div>
         </div>
         </section>
-      </div><!--
+      </div>
+        <div class="col-md-4 mx-auto" *ngIf="hasRole('/admin/workshops')">
+          <section class="page-section cta">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-9 mx-auto">
+                <div class="cta-inner text-center rounded">
+                  <h2 class="section-heading mb-4">
+                    <span class="section-heading-upper">Workshop</span>
+                  </h2>
+                  <p class="mb-0">Ce menu permet de d'acceder à la gestion des workshops</p>
+                  <br />
+                  <a class="btn btn-primary btn-xl" (click)="navigate('/admin/workshops')">Voir les workshop</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          </section>
+        </div>
+        <!--
       <div class="col-md-4 mx-auto" *ngIf="hasRole('/admin/articles')">
         <section class="page-section cta">
         <div class="container">

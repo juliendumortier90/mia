@@ -26,6 +26,8 @@ import { HasRoleGuard } from './util/guard/hasRoleGuard';
 import { AdminStatisticsComponent } from './admin/statistics/statistics.component';
 import { WorkshopRegisterComponent } from './workshop/workshop-register/workshop-register.component';
 import { WorkshopRegisterValidationComponent } from './workshop/workshop-register-validation/workshop-register-validation.component';
+import { AdminWorkshopsComponent } from './admin/workshops/workshops.component';
+import { AdminWorkshopDetailComponent } from './admin/workshops/workshop-detail/workshop-detail.component';
 
 const routes: Routes = [
     {
@@ -129,7 +131,23 @@ const routes: Routes = [
         canActivate: [
             HasRoleGuard
         ]
-    },/*
+    },
+    {
+        path: 'admin/workshops',
+        component: AdminWorkshopsComponent,
+        /*TODO canActivate: [
+            HasRoleGuard
+        ]*/
+    },
+    {
+        path: 'admin/workshop/detail',
+        component: AdminWorkshopDetailComponent,
+        /*TODO canActivate: [
+            HasRoleGuard
+        ]*/
+    },
+    
+    /*
     {
         path: 'admin/articles',
         component: AdminArticlesComponent,

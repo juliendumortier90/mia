@@ -41,6 +41,8 @@ import { LinksComponent } from './links/links.component';
 import { AdminStatisticsComponent } from './admin/statistics/statistics.component';
 import { WorkshopRegisterComponent } from './workshop/workshop-register/workshop-register.component';
 import { WorkshopRegisterValidationComponent } from './workshop/workshop-register-validation/workshop-register-validation.component';
+import { AdminWorkshopsComponent } from './admin/workshops/workshops.component';
+import { AdminWorkshopDetailComponent } from './admin/workshops/workshop-detail/workshop-detail.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +72,9 @@ import { WorkshopRegisterValidationComponent } from './workshop/workshop-registe
     AdminAddMemberComponent,
     AdminOrdersComponent,
     AdminUpdateOrderComponent,
-    AdminStatisticsComponent
+    AdminStatisticsComponent,
+    AdminWorkshopsComponent,
+    AdminWorkshopDetailComponent
   ],
   imports: [
     CommonModule,

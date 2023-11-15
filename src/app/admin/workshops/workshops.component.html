@@ -1,0 +1,38 @@
+<section class="page-section cta">
+  <div class="container no-max-width">
+    <a class="btn-add btn btn-primary btn-sm btn-marged" (click)="addWorkshop()">Ajouter un workshop</a>
+    <div class="row">
+      <div class="col-xl-9 mx-auto no-max-width">
+        <div class="cta-inner text-center rounded">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th scope="col">Visibilité</th>
+              <th scope="col">Nom</th>
+              <th scope="col">Date</th>
+              <th scope="col">Description</th>
+              <th scope="col">Nombre de bénévole max</th>
+              <th scope="col">Nombre de quandidature</th>
+              <th scope="col">Type de WS</th>
+              <th scope="col">id</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let ws of workshops" class="clickable" (click)="workshopDetail(ws)">
+              <td *ngIf="ws.visible"><span class="tilt">oui</span></td>
+              <td *ngIf="!ws.visible"><span class="tilt tilt-red">non</span></td>
+              <td>{{ ws.name }}</td>
+              <td>{{ ws.startDate }}</td>
+              <td>{{ ws.description}}</td>
+              <td>{{ ws.nbMax }}</td>
+              <td>{{ ws.members.length }}</td>
+              <td>{{ ws.type }}</td>
+              <td>{{ ws.id }}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,109 @@
+<section class="page-section about-heading">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12 mx-auto">
+        <section class="page-section cta">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-12">
+              <div class="cta-inner text-center rounded">
+                  <div class="button-edit">
+                    <a class="btn btn-primary btn-sm btn-marged" (click)="onChangeVisibilityStatus()">Changer la visibilité du workshop</a>
+                    <a class="btn btn-primary btn-sm" (click)="goBack()">Retour</a>
+                  </div>
+                  <div class="article-stock">
+                    <span class="subtitle">Visibilité:</span> 
+                    <span class="tilt" *ngIf="ws.visible==true">OUI</span>
+                    <span class="tilt tilt-red" *ngIf="!ws.visible">NON</span>
+                  </div>
+                  <div class="article-stock"><span class="subtitle">Nom:</span> {{ ws.name }}</div>
+                  <div class="article-name"><span class="subtitle">Date:</span> {{ ws.startDate }}</div>
+                  <div class="article-id"><span class="subtitle">Description:</span> {{ ws.description }}</div>
+                  <div class="article-type"><span class="subtitle">Nombre de bénévole max:</span> {{ ws.nbMax }}</div>
+                  <div class="article-price"><span class="subtitle">Nombre de quandidature:</span> {{ ws.members.length }}</div>
+                  <div class="article-stock"><span class="subtitle">Type de WS:</span> {{ ws.type }}</div>
+                  <div class="article-stock"><span class="subtitle">id:</span> {{ ws.id }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="page-section cta">
+  
+  <div class="container no-max-width">
+    <div class="row">
+      <div class="mx-auto no-max-width">
+        <div class="cta-inner text-center rounded">
+          <h2 class="section-heading mb-5">
+            <span class="section-heading-lower">Demandes en attente</span>
+        </h2>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th scope="col">Nom</th>
+              <th scope="col">Prénom</th>
+              <th scope="col">Téléphone</th>
+              <th scope="col">Email</th>
+              <th scope="col">Description</th>
+              <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let member of ws.members">
+              <td>{{ member.lastname }}</td>
+              <td>{{ member.firstname }}</td>
+              <td>{{ member.phoneNumber}}</td>
+              <td>{{ member.email }}</td>
+              <td>{{ member.description }}</td>
+              <td>
+                <a class="btn btn-primary btn-sm btn-marged" (click)="invite(member)">Inviter</a>
+                <a class="btn btn-danger btn-sm btn-marged" (click)="refuse(member)">Refuser</a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section cta">
+  
+  <div class="container no-max-width">
+    <div class="row">
+      <div class="mx-auto no-max-width">
+        <div class="cta-inner text-center rounded">
+          <h2 class="section-heading mb-5">
+            <span class="section-heading-lower">Demandes en validées</span>
+        </h2>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th scope="col">Nom</th>
+              <th scope="col">Prénom</th>
+              <th scope="col">Téléphone</th>
+              <th scope="col">Email</th>
+              <th scope="col">Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let member of ws.selectedMembers">
+              <td>{{ member.lastname }}</td>
+              <td>{{ member.firstname }}</td>
+              <td>{{ member.phoneNumber}}</td>
+              <td>{{ member.email }}</td>
+              <td>{{ member.description }}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
