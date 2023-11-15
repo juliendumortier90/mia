@@ -136,23 +136,23 @@ const routes: Routes = [
     {
         path: 'admin/workshops',
         component: AdminWorkshopsComponent,
-        /*TODO canActivate: [
+        canActivate: [
             HasRoleGuard
-        ]*/
+        ]
     },
     {
         path: 'admin/workshop/detail',
         component: AdminWorkshopDetailComponent,
-        /*TODO canActivate: [
+        canActivate: [
             HasRoleGuard
-        ]*/
+        ]
     },
     {
         path: 'admin/workshop/add',
         component: AdminAddWorkshopComponent,
-        /*TODO canActivate: [
+        canActivate: [
             HasRoleGuard
-        ]*/
+        ]
     },
     
     /*
