@@ -19,7 +19,7 @@ export class AdminWorkshopsComponent implements OnInit {
         "id": "bkhezy58yqm",
         "name": "workshop 1",
         "nbMax": 4,
-        "type": "feraillage"
+        "type": "ferraillage"
     }
   */
   workshops = []

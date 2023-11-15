@@ -12,7 +12,7 @@ interface Workshop {
   "id": string,
   "name": string,
   "nbMax": number,
-  "type": "terrassement" | "feraillage" | "beton" | "rangement" | "divers"
+  "type": "terrassement" | "ferraillage" | "beton" | "rangement" | "divers"
 }
 
 @Component({

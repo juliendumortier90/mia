@@ -41,6 +41,7 @@ export class AdminWorkshopDetailComponent implements OnInit {
         })
         .subscribe((data: any) => {
           this.toastr.success("l'utilisateur a été invité")
+          this.goBack()
         })
       }
     })
@@ -56,6 +57,7 @@ export class AdminWorkshopDetailComponent implements OnInit {
         })
         .subscribe((data: any) => {
           this.toastr.success("l'utilisateur a été notifié")
+          this.goBack()
         })
       }
     })
