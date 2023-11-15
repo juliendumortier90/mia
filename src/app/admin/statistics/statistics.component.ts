@@ -18,6 +18,8 @@ export class AdminStatisticsComponent implements OnInit {
 
   members2021 = 0
   members2022 = 0
+  members2023 = 0
+  members2024 = 0
   male = 0
   female = 0
   femalePercent = 0
@@ -31,6 +33,8 @@ export class AdminStatisticsComponent implements OnInit {
       this.members = data
       this.members2021 = this.members.filter(member => member.creationDate.indexOf('/2021') >= 0).length
       this.members2022 = this.members.filter(member => member.creationDate.indexOf('/2022') >= 0).length
+      this.members2021 = this.members.filter(member => member.creationDate.indexOf('/2023') >= 0).length
+      this.members2022 = this.members.filter(member => member.creationDate.indexOf('/2024') >= 0).length
       this.male = this.members.filter(member => member.sexe?.indexOf('HOMME') >= 0).length
       this.female = this.members.filter(member => member.sexe?.indexOf('FEMME') >= 0).length
       this.femalePercent = this.female *100/(this.male + this.female)
@@ -42,7 +46,7 @@ export class AdminStatisticsComponent implements OnInit {
   }
 
   private getMembers(): Observable<any[]> {
-    return this.http.get<any>('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/integ/member/list-members')
+    return this.http.get<any>('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/prod/member/list-members')
   }
 
   downloadMembers() {

@@ -125,11 +125,11 @@ export class PaypalComponent implements OnInit {
 
   private checkStock() {
     const itemsId = this.items.map(item => item.id)
-    return this.http.post('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/integ/shop/check-stock', itemsId)
+    return this.http.post('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/prod/shop/check-stock', itemsId)
   }
 
   private callOnCompleteTransaction(data: any) {
-    this.http.post('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/integ/shop/oncomplete-transaction', data)
+    this.http.post('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/prod/shop/oncomplete-transaction', data)
         .subscribe((data: any) => {
           this.toastr.success("Paiement réussi")
           this.router.navigateByUrl('/shop/success')

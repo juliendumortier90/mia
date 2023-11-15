@@ -46,6 +46,6 @@ export class AdminOrdersComponent implements OnInit {
   }
 
   private getOrders(): Observable<any[]> {
-    return this.http.get<any>('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/integ/admin/list-shop-orders')
+    return this.http.get<any>('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/prod/admin/list-shop-orders')
   }
 }

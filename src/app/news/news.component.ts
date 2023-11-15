@@ -28,6 +28,6 @@ export class NewsComponent implements OnInit {
   }
 
   private getLastFeeds(): Observable<any[]> {
-    return this.http.get<any>('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/integ/instagram/list-feeds')
+    return this.http.get<any>('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/prod/instagram/list-feeds')
   }
 }

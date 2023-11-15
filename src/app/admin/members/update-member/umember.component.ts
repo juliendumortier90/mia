@@ -37,7 +37,7 @@ export class AdminUpdateMemberComponent implements OnInit {
   }
 
   changePayStatusMember() {
-    this.http.post('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/integ/member/update-paid', this.member)
+    this.http.post('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/prod/member/update-paid', this.member)
         .subscribe((data: any) => {
           this.toastr.success('Le statut de paiement du membre a été mis à jour')
           this.goBack()

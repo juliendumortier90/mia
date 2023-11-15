@@ -47,7 +47,7 @@ export class AdminAddMemberComponent implements OnInit {
     } else if (this.iValidEmail(this.member.email) == false) {
       this.inEmailError = true
     } else {
-      this.http.post<any>('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/integ/member/add-member', this.member).subscribe((data: any) => {
+      this.http.post<any>('https://zq3s7ojolk.execute-api.eu-west-1.amazonaws.com/prod/member/add-member', this.member).subscribe((data: any) => {
         this.router.navigateByUrl('/admin/members')
       }, (error: any) => {
         if (error.status == 410) {
